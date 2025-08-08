@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5AF988CD2E45D6F40087A78F /* PraklyneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988CC2E45D6F40087A78F /* PraklyneApp.swift */; };
+		5AF988CF2E45D6F40087A78F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988CE2E45D6F40087A78F /* ContentView.swift */; };
+		5AF988D12E45D6F70087A78F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF988D02E45D6F70087A78F /* Assets.xcassets */; };
+		5AF988D42E45D6F70087A78F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF988D32E45D6F70087A78F /* Preview Assets.xcassets */; };
+		5AF988D62E45D6F70087A78F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988D52E45D6F70087A78F /* Persistence.swift */; };
+		5AF988D92E45D6F70087A78F /* Praklyne.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988D72E45D6F70087A78F /* Praklyne.xcdatamodeld */; };
+		5AF988E32E45D6F80087A78F /* PraklyneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988E22E45D6F80087A78F /* PraklyneTests.swift */; };
+		5AF988ED2E45D6F80087A78F /* PraklyneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988EC2E45D6F80087A78F /* PraklyneUITests.swift */; };
+		5AF988EF2E45D6F80087A78F /* PraklyneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988EE2E45D6F80087A78F /* PraklyneUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AF988DF2E45D6F80087A78F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AF988C12E45D6F40087A78F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AF988C82E45D6F40087A78F;
+			remoteInfo = Praklyne;
+		};
+		5AF988E92E45D6F80087A78F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AF988C12E45D6F40087A78F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AF988C82E45D6F40087A78F;
+			remoteInfo = Praklyne;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5AF988C92E45D6F40087A78F /* Praklyne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Praklyne.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AF988CC2E45D6F40087A78F /* PraklyneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraklyneApp.swift; sourceTree = "<group>"; };
+		5AF988CE2E45D6F40087A78F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5AF988D02E45D6F70087A78F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5AF988D32E45D6F70087A78F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5AF988D52E45D6F70087A78F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		5AF988D82E45D6F70087A78F /* Praklyne.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Praklyne.xcdatamodel; sourceTree = "<group>"; };
+		5AF988DE2E45D6F80087A78F /* PraklyneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PraklyneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AF988E22E45D6F80087A78F /* PraklyneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraklyneTests.swift; sourceTree = "<group>"; };
+		5AF988E82E45D6F80087A78F /* PraklyneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PraklyneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AF988EC2E45D6F80087A78F /* PraklyneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraklyneUITests.swift; sourceTree = "<group>"; };
+		5AF988EE2E45D6F80087A78F /* PraklyneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraklyneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AF988C62E45D6F40087A78F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF988DB2E45D6F80087A78F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF988E52E45D6F80087A78F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AF988C02E45D6F40087A78F = {
+			isa = PBXGroup;
+			children = (
+				5AF988CB2E45D6F40087A78F /* Praklyne */,
+				5AF988E12E45D6F80087A78F /* PraklyneTests */,
+				5AF988EB2E45D6F80087A78F /* PraklyneUITests */,
+				5AF988CA2E45D6F40087A78F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5AF988CA2E45D6F40087A78F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AF988C92E45D6F40087A78F /* Praklyne.app */,
+				5AF988DE2E45D6F80087A78F /* PraklyneTests.xctest */,
+				5AF988E82E45D6F80087A78F /* PraklyneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AF988CB2E45D6F40087A78F /* Praklyne */ = {
+			isa = PBXGroup;
+			children = (
+				5AF988CC2E45D6F40087A78F /* PraklyneApp.swift */,
+				5AF988CE2E45D6F40087A78F /* ContentView.swift */,
+				5AF988D02E45D6F70087A78F /* Assets.xcassets */,
+				5AF988D52E45D6F70087A78F /* Persistence.swift */,
+				5AF988D72E45D6F70087A78F /* Praklyne.xcdatamodeld */,
+				5AF988D22E45D6F70087A78F /* Preview Content */,
+			);
+			path = Praklyne;
+			sourceTree = "<group>";
+		};
+		5AF988D22E45D6F70087A78F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5AF988D32E45D6F70087A78F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5AF988E12E45D6F80087A78F /* PraklyneTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AF988E22E45D6F80087A78F /* PraklyneTests.swift */,
+			);
+			path = PraklyneTests;
+			sourceTree = "<group>";
+		};
+		5AF988EB2E45D6F80087A78F /* PraklyneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5AF988EC2E45D6F80087A78F /* PraklyneUITests.swift */,
+				5AF988EE2E45D6F80087A78F /* PraklyneUITestsLaunchTests.swift */,
+			);
+			path = PraklyneUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AF988C82E45D6F40087A78F /* Praklyne */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AF988F22E45D6F80087A78F /* Build configuration list for PBXNativeTarget "Praklyne" */;
+			buildPhases = (
+				5AF988C52E45D6F40087A78F /* Sources */,
+				5AF988C62E45D6F40087A78F /* Frameworks */,
+				5AF988C72E45D6F40087A78F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Praklyne;
+			productName = Praklyne;
+			productReference = 5AF988C92E45D6F40087A78F /* Praklyne.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5AF988DD2E45D6F80087A78F /* PraklyneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AF988F52E45D6F80087A78F /* Build configuration list for PBXNativeTarget "PraklyneTests" */;
+			buildPhases = (
+				5AF988DA2E45D6F80087A78F /* Sources */,
+				5AF988DB2E45D6F80087A78F /* Frameworks */,
+				5AF988DC2E45D6F80087A78F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AF988E02E45D6F80087A78F /* PBXTargetDependency */,
+			);
+			name = PraklyneTests;
+			productName = PraklyneTests;
+			productReference = 5AF988DE2E45D6F80087A78F /* PraklyneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5AF988E72E45D6F80087A78F /* PraklyneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AF988F82E45D6F80087A78F /* Build configuration list for PBXNativeTarget "PraklyneUITests" */;
+			buildPhases = (
+				5AF988E42E45D6F80087A78F /* Sources */,
+				5AF988E52E45D6F80087A78F /* Frameworks */,
+				5AF988E62E45D6F80087A78F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AF988EA2E45D6F80087A78F /* PBXTargetDependency */,
+			);
+			name = PraklyneUITests;
+			productName = PraklyneUITests;
+			productReference = 5AF988E82E45D6F80087A78F /* PraklyneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AF988C12E45D6F40087A78F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5AF988C82E45D6F40087A78F = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					5AF988DD2E45D6F80087A78F = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 5AF988C82E45D6F40087A78F;
+					};
+					5AF988E72E45D6F80087A78F = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 5AF988C82E45D6F40087A78F;
+					};
+				};
+			};
+			buildConfigurationList = 5AF988C42E45D6F40087A78F /* Build configuration list for PBXProject "Praklyne" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5AF988C02E45D6F40087A78F;
+			productRefGroup = 5AF988CA2E45D6F40087A78F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AF988C82E45D6F40087A78F /* Praklyne */,
+				5AF988DD2E45D6F80087A78F /* PraklyneTests */,
+				5AF988E72E45D6F80087A78F /* PraklyneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AF988C72E45D6F40087A78F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AF988D42E45D6F70087A78F /* Preview Assets.xcassets in Resources */,
+				5AF988D12E45D6F70087A78F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF988DC2E45D6F80087A78F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF988E62E45D6F80087A78F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AF988C52E45D6F40087A78F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AF988D62E45D6F70087A78F /* Persistence.swift in Sources */,
+				5AF988CF2E45D6F40087A78F /* ContentView.swift in Sources */,
+				5AF988CD2E45D6F40087A78F /* PraklyneApp.swift in Sources */,
+				5AF988D92E45D6F70087A78F /* Praklyne.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF988DA2E45D6F80087A78F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AF988E32E45D6F80087A78F /* PraklyneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF988E42E45D6F80087A78F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AF988EF2E45D6F80087A78F /* PraklyneUITestsLaunchTests.swift in Sources */,
+				5AF988ED2E45D6F80087A78F /* PraklyneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AF988E02E45D6F80087A78F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AF988C82E45D6F40087A78F /* Praklyne */;
+			targetProxy = 5AF988DF2E45D6F80087A78F /* PBXContainerItemProxy */;
+		};
+		5AF988EA2E45D6F80087A78F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AF988C82E45D6F40087A78F /* Praklyne */;
+			targetProxy = 5AF988E92E45D6F80087A78F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5AF988F02E45D6F80087A78F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5AF988F12E45D6F80087A78F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AF988F32E45D6F80087A78F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Praklyne/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = IshanKM.Praklyne;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5AF988F42E45D6F80087A78F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Praklyne/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = IshanKM.Praklyne;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5AF988F62E45D6F80087A78F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = IshanKM.PraklyneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Praklyne.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Praklyne";
+			};
+			name = Debug;
+		};
+		5AF988F72E45D6F80087A78F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = IshanKM.PraklyneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Praklyne.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Praklyne";
+			};
+			name = Release;
+		};
+		5AF988F92E45D6F80087A78F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = IshanKM.PraklyneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Praklyne;
+			};
+			name = Debug;
+		};
+		5AF988FA2E45D6F80087A78F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = IshanKM.PraklyneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Praklyne;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5AF988C42E45D6F40087A78F /* Build configuration list for PBXProject "Praklyne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AF988F02E45D6F80087A78F /* Debug */,
+				5AF988F12E45D6F80087A78F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AF988F22E45D6F80087A78F /* Build configuration list for PBXNativeTarget "Praklyne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AF988F32E45D6F80087A78F /* Debug */,
+				5AF988F42E45D6F80087A78F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AF988F52E45D6F80087A78F /* Build configuration list for PBXNativeTarget "PraklyneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AF988F62E45D6F80087A78F /* Debug */,
+				5AF988F72E45D6F80087A78F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AF988F82E45D6F80087A78F /* Build configuration list for PBXNativeTarget "PraklyneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AF988F92E45D6F80087A78F /* Debug */,
+				5AF988FA2E45D6F80087A78F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5AF988D72E45D6F70087A78F /* Praklyne.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5AF988D82E45D6F70087A78F /* Praklyne.xcdatamodel */,
+			);
+			currentVersion = 5AF988D82E45D6F70087A78F /* Praklyne.xcdatamodel */;
+			path = Praklyne.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5AF988C12E45D6F40087A78F /* Project object */;
+}
