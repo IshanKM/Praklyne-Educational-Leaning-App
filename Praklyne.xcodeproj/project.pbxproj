@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A719ABC2E4EC8FD00298CD0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5A719ABB2E4EC8FD00298CD0 /* FirebaseAnalytics */; };
+		5A719ABE2E4EC8FD00298CD0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A719ABD2E4EC8FD00298CD0 /* FirebaseAuth */; };
+		5A719AC02E4EC8FD00298CD0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A719ABF2E4EC8FD00298CD0 /* FirebaseFirestore */; };
+		5A719AC22E4EC8FD00298CD0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A719AC12E4EC8FD00298CD0 /* FirebaseFirestoreSwift */; };
+		5A719AC52E4ECB2200298CD0 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5A719AC42E4ECB2200298CD0 /* GoogleSignIn */; };
+		5A719AC72E4ECB2200298CD0 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A719AC62E4ECB2200298CD0 /* GoogleSignInSwift */; };
+		5A719AC92E4ECE7E00298CD0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A719AC82E4ECE7E00298CD0 /* GoogleService-Info.plist */; };
+		5A719ACC2E4EEAC300298CD0 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A719ACB2E4EEAC300298CD0 /* Homepage.swift */; };
+		5A719ACF2E4EEB5700298CD0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A719ACE2E4EEB5700298CD0 /* UserModel.swift */; };
+		5A719AD22E4EEB7500298CD0 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A719AD12E4EEB7500298CD0 /* FirebaseManager.swift */; };
+		5A76165B2E4C02ED00B7C85A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76165A2E4C02ED00B7C85A /* Login.swift */; };
 		5AF988CD2E45D6F40087A78F /* PraklyneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988CC2E45D6F40087A78F /* PraklyneApp.swift */; };
 		5AF988CF2E45D6F40087A78F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988CE2E45D6F40087A78F /* ContentView.swift */; };
 		5AF988D12E45D6F70087A78F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF988D02E45D6F70087A78F /* Assets.xcassets */; };
@@ -36,6 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A719AC82E4ECE7E00298CD0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A719ACA2E4EE0D000298CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5A719ACB2E4EEAC300298CD0 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
+		5A719ACE2E4EEB5700298CD0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		5A719AD12E4EEB7500298CD0 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		5A76165A2E4C02ED00B7C85A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		5AF988C92E45D6F40087A78F /* Praklyne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Praklyne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF988CC2E45D6F40087A78F /* PraklyneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraklyneApp.swift; sourceTree = "<group>"; };
 		5AF988CE2E45D6F40087A78F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +72,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A719AC52E4ECB2200298CD0 /* GoogleSignIn in Frameworks */,
+				5A719ABC2E4EC8FD00298CD0 /* FirebaseAnalytics in Frameworks */,
+				5A719ABE2E4EC8FD00298CD0 /* FirebaseAuth in Frameworks */,
+				5A719AC72E4ECB2200298CD0 /* GoogleSignInSwift in Frameworks */,
+				5A719AC02E4EC8FD00298CD0 /* FirebaseFirestore in Frameworks */,
+				5A719AC22E4EC8FD00298CD0 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +98,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A719ACD2E4EEB2B00298CD0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A719ACE2E4EEB5700298CD0 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A719AD02E4EEB6400298CD0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5A719AD12E4EEB7500298CD0 /* FirebaseManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		5AF988C02E45D6F40087A78F = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +137,10 @@
 		5AF988CB2E45D6F40087A78F /* Praklyne */ = {
 			isa = PBXGroup;
 			children = (
+				5A719AD02E4EEB6400298CD0 /* Helper */,
+				5A719ACD2E4EEB2B00298CD0 /* Models */,
+				5A719ACA2E4EE0D000298CD0 /* Info.plist */,
+				5A719AC82E4ECE7E00298CD0 /* GoogleService-Info.plist */,
 				5AF988FB2E45D7140087A78F /* User_Interface */,
 				5AF988CC2E45D6F40087A78F /* PraklyneApp.swift */,
 				5AF988CE2E45D6F40087A78F /* ContentView.swift */,
@@ -137,6 +180,8 @@
 		5AF988FB2E45D7140087A78F /* User_Interface */ = {
 			isa = PBXGroup;
 			children = (
+				5A76165A2E4C02ED00B7C85A /* Login.swift */,
+				5A719ACB2E4EEAC300298CD0 /* Homepage.swift */,
 			);
 			path = User_Interface;
 			sourceTree = "<group>";
@@ -157,6 +202,14 @@
 			dependencies = (
 			);
 			name = Praklyne;
+			packageProductDependencies = (
+				5A719ABB2E4EC8FD00298CD0 /* FirebaseAnalytics */,
+				5A719ABD2E4EC8FD00298CD0 /* FirebaseAuth */,
+				5A719ABF2E4EC8FD00298CD0 /* FirebaseFirestore */,
+				5A719AC12E4EC8FD00298CD0 /* FirebaseFirestoreSwift */,
+				5A719AC42E4ECB2200298CD0 /* GoogleSignIn */,
+				5A719AC62E4ECB2200298CD0 /* GoogleSignInSwift */,
+			);
 			productName = Praklyne;
 			productReference = 5AF988C92E45D6F40087A78F /* Praklyne.app */;
 			productType = "com.apple.product-type.application";
@@ -229,6 +282,10 @@
 				Base,
 			);
 			mainGroup = 5AF988C02E45D6F40087A78F;
+			packageReferences = (
+				5A719ABA2E4EC8FD00298CD0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5A719AC32E4ECB2200298CD0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = 5AF988CA2E45D6F40087A78F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -247,6 +304,7 @@
 			files = (
 				5AF988D42E45D6F70087A78F /* Preview Assets.xcassets in Resources */,
 				5AF988D12E45D6F70087A78F /* Assets.xcassets in Resources */,
+				5A719AC92E4ECE7E00298CD0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +330,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AF988D62E45D6F70087A78F /* Persistence.swift in Sources */,
+				5A719ACF2E4EEB5700298CD0 /* UserModel.swift in Sources */,
+				5A76165B2E4C02ED00B7C85A /* Login.swift in Sources */,
+				5A719AD22E4EEB7500298CD0 /* FirebaseManager.swift in Sources */,
 				5AF988CF2E45D6F40087A78F /* ContentView.swift in Sources */,
+				5A719ACC2E4EEAC300298CD0 /* Homepage.swift in Sources */,
 				5AF988CD2E45D6F40087A78F /* PraklyneApp.swift in Sources */,
 				5AF988D92E45D6F70087A78F /* Praklyne.xcdatamodeld in Sources */,
 			);
@@ -435,6 +497,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Praklyne/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Praklyne/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -463,6 +526,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Praklyne/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Praklyne/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -593,6 +657,58 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A719ABA2E4EC8FD00298CD0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 10.24.0;
+			};
+		};
+		5A719AC32E4ECB2200298CD0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = exactVersion;
+				version = 7.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A719ABB2E4EC8FD00298CD0 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A719ABA2E4EC8FD00298CD0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5A719ABD2E4EC8FD00298CD0 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A719ABA2E4EC8FD00298CD0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5A719ABF2E4EC8FD00298CD0 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A719ABA2E4EC8FD00298CD0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5A719AC12E4EC8FD00298CD0 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A719ABA2E4EC8FD00298CD0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		5A719AC42E4ECB2200298CD0 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A719AC32E4ECB2200298CD0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		5A719AC62E4ECB2200298CD0 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A719AC32E4ECB2200298CD0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5AF988D72E45D6F70087A78F /* Praklyne.xcdatamodeld */ = {
