@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>756028124724-rk5gbi1m7a97iool8pc9pmthrb6dcrn6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.756028124724-rk5gbi1m7a97iool8pc9pmthrb6dcrn6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB_q274Saubl-6K03LA5O4EiCJrDFNK_JA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>756028124724</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>IshanKM.Praklyne</string>
+	<key>PROJECT_ID</key>
+	<string>praklyne</string>
+	<key>STORAGE_BUCKET</key>
+	<string>praklyne.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:756028124724:ios:17736136af554a01bca461</string>
+</dict>
+</plist>
