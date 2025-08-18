@@ -18,9 +18,17 @@ struct CourseCardView: View {
                     .frame(height: 180)
                 
       
-                Image(systemName: "play.rectangle.fill")
-                    .font(.system(size: 40))
-                    .foregroundColor(.white)
+                Image(course.image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 180)
+                    .clipped()
+                    .cornerRadius(12)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.black.opacity(0.1), lineWidth: 0.5)
+                    )
+
             }
             
             VStack(alignment: .leading, spacing: 8) {
@@ -70,3 +78,4 @@ struct CourseCardView: View {
         .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 4)
     }
 }
+

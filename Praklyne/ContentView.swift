@@ -9,7 +9,7 @@ struct ContentView: View {
             if user == nil {
                 SignInView(user: $user)
             } else {
-                HomeView()
+                HomeView(user: $user)
             }
         }
         .onAppear {

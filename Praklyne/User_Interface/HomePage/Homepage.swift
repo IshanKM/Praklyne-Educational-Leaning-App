@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Binding var user: UserModel?
+    
     @State private var selectedToolsTab = "English"
     @State private var showAllSubjects = false
     @State private var selectedBottomTab = 0
@@ -10,11 +12,13 @@ struct HomeView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     
-                    HeaderView()
+                    HeaderView(user: user)
                     
                     CoursesSectionView()
                   
                     SubjectsSectionView(showAll: $showAllSubjects)
+                    
+                    Spacer()
                     
                     ToolsSectionView(selectedTab: $selectedToolsTab)
                     
@@ -34,9 +38,11 @@ struct HomeView: View {
     }
 }
 
-
 struct HomeView_Previews: PreviewProvider {
+    @State static var previewUser: UserModel? = nil
+
     static var previews: some View {
-        HomeView()
+        HomeView(user: $previewUser)
     }
 }
+
