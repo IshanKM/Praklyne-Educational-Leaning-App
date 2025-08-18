@@ -116,12 +116,6 @@ struct SignInView: View {
 }
 
 
-struct SignInView_Previews: PreviewProvider {
-    @State static var previewUser: UserModel? = nil
 
-    static var previews: some View {
-        SignInView(user: $previewUser)
-    }
-}
 
 

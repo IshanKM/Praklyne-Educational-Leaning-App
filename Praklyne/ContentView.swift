@@ -2,14 +2,14 @@ import SwiftUI
 import FirebaseAuth
 
 struct ContentView: View {
-    @State private var user: UserModel? = nil
+    @State private var user: UserModel?
     
     var body: some View {
         Group {
             if user == nil {
                 SignInView(user: $user)
             } else {
-                HomeView(user: $user)
+                HomeView()
             }
         }
         .onAppear {
