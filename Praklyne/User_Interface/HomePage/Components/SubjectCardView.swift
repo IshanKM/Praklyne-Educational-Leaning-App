@@ -19,7 +19,7 @@ struct SubjectCardView: View {
                 .fontWeight(.medium)
                 .foregroundColor(.white)
         }
-        .frame(width: 80, height: 80)
+        .frame(width: 100, height: 100)
         .background(subject.color)
         .cornerRadius(16)
     }
