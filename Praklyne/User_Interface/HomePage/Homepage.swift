@@ -28,13 +28,7 @@ struct HomeView: View {
             }
             .background(Color(.systemBackground))
         }
-        .overlay(
-   
-            BottomNavigationView(selectedTab: $selectedBottomTab)
-                .background(Color.white)
-                .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -2),
-            alignment: .bottom
-        )
+        
     }
 }
 

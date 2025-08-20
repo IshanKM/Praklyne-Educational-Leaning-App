@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0C77542E556A050002D647 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0C77532E556A050002D647 /* VideoService.swift */; };
 		5A719ABC2E4EC8FD00298CD0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5A719ABB2E4EC8FD00298CD0 /* FirebaseAnalytics */; };
 		5A719ABE2E4EC8FD00298CD0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A719ABD2E4EC8FD00298CD0 /* FirebaseAuth */; };
 		5A719AC02E4EC8FD00298CD0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A719ABF2E4EC8FD00298CD0 /* FirebaseFirestore */; };
@@ -18,6 +19,11 @@
 		5A719ACF2E4EEB5700298CD0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A719ACE2E4EEB5700298CD0 /* UserModel.swift */; };
 		5A719AD22E4EEB7500298CD0 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A719AD12E4EEB7500298CD0 /* FirebaseManager.swift */; };
 		5A76165B2E4C02ED00B7C85A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A76165A2E4C02ED00B7C85A /* Login.swift */; };
+		5A8540642E54A49A00B55456 /* MainTabNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8540632E54A49A00B55456 /* MainTabNavigationView.swift */; };
+		5A8540672E54AAA500B55456 /* VideoDatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8540662E54AAA500B55456 /* VideoDatModel.swift */; };
+		5A85406B2E54AD4600B55456 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85406A2E54AD4600B55456 /* VideoPlayer.swift */; };
+		5A85406D2E54AD6800B55456 /* VideoSwipeControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85406C2E54AD6800B55456 /* VideoSwipeControls.swift */; };
+		5A85406F2E54ADB000B55456 /* VideoOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85406E2E54ADB000B55456 /* VideoOverlay.swift */; };
 		5AA077CE2E5276B900A920D5 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA077CD2E5276B900A920D5 /* HomeTopView.swift */; };
 		5AA077D02E528A3700A920D5 /* CoursesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA077CF2E528A3700A920D5 /* CoursesSectionView.swift */; };
 		5AA077D22E528AD200A920D5 /* CourseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA077D12E528AD200A920D5 /* CourseCardView.swift */; };
@@ -29,7 +35,7 @@
 		5AA077DE2E528D2F00A920D5 /* CoursesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA077DD2E528D2F00A920D5 /* CoursesModel.swift */; };
 		5AA077E02E528D7E00A920D5 /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA077DF2E528D7E00A920D5 /* SubjectModel.swift */; };
 		5AA077E22E528D9200A920D5 /* ToolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA077E12E528D9200A920D5 /* ToolModel.swift */; };
-		5AA077E42E53E14400A920D5 /* VIdeoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA077E32E53E14400A920D5 /* VIdeoPlayer.swift */; };
+		5AA077E42E53E14400A920D5 /* VideoShortsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA077E32E53E14400A920D5 /* VideoShortsView.swift */; };
 		5AF988CD2E45D6F40087A78F /* PraklyneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988CC2E45D6F40087A78F /* PraklyneApp.swift */; };
 		5AF988CF2E45D6F40087A78F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988CE2E45D6F40087A78F /* ContentView.swift */; };
 		5AF988D12E45D6F70087A78F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF988D02E45D6F70087A78F /* Assets.xcassets */; };
@@ -59,12 +65,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A0C77532E556A050002D647 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
 		5A719AC82E4ECE7E00298CD0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A719ACA2E4EE0D000298CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A719ACB2E4EEAC300298CD0 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		5A719ACE2E4EEB5700298CD0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5A719AD12E4EEB7500298CD0 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		5A76165A2E4C02ED00B7C85A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		5A8540632E54A49A00B55456 /* MainTabNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabNavigationView.swift; sourceTree = "<group>"; };
+		5A8540662E54AAA500B55456 /* VideoDatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDatModel.swift; sourceTree = "<group>"; };
+		5A85406A2E54AD4600B55456 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
+		5A85406C2E54AD6800B55456 /* VideoSwipeControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSwipeControls.swift; sourceTree = "<group>"; };
+		5A85406E2E54ADB000B55456 /* VideoOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoOverlay.swift; sourceTree = "<group>"; };
 		5AA077CD2E5276B900A920D5 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
 		5AA077CF2E528A3700A920D5 /* CoursesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesSectionView.swift; sourceTree = "<group>"; };
 		5AA077D12E528AD200A920D5 /* CourseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCardView.swift; sourceTree = "<group>"; };
@@ -76,7 +88,7 @@
 		5AA077DD2E528D2F00A920D5 /* CoursesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesModel.swift; sourceTree = "<group>"; };
 		5AA077DF2E528D7E00A920D5 /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
 		5AA077E12E528D9200A920D5 /* ToolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolModel.swift; sourceTree = "<group>"; };
-		5AA077E32E53E14400A920D5 /* VIdeoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIdeoPlayer.swift; sourceTree = "<group>"; };
+		5AA077E32E53E14400A920D5 /* VideoShortsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoShortsView.swift; sourceTree = "<group>"; };
 		5AF988C92E45D6F40087A78F /* Praklyne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Praklyne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF988CC2E45D6F40087A78F /* PraklyneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraklyneApp.swift; sourceTree = "<group>"; };
 		5AF988CE2E45D6F40087A78F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +134,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A0C77512E5568880002D647 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A0C77522E5569F70002D647 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5A0C77532E556A050002D647 /* VideoService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		5A719ACD2E4EEB2B00298CD0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +156,7 @@
 				5AA077DD2E528D2F00A920D5 /* CoursesModel.swift */,
 				5AA077DF2E528D7E00A920D5 /* SubjectModel.swift */,
 				5AA077E12E528D9200A920D5 /* ToolModel.swift */,
+				5A8540662E54AAA500B55456 /* VideoDatModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,6 +167,34 @@
 				5A719AD12E4EEB7500298CD0 /* FirebaseManager.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		5A8540652E54A85000B55456 /* Global_Components */ = {
+			isa = PBXGroup;
+			children = (
+				5A8540632E54A49A00B55456 /* MainTabNavigationView.swift */,
+				5AA077DB2E528BAE00A920D5 /* BottomNavigationView.swift */,
+			);
+			path = Global_Components;
+			sourceTree = "<group>";
+		};
+		5A8540682E54ABBF00B55456 /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				5A8540692E54ABD700B55456 /* Components */,
+				5AA077E32E53E14400A920D5 /* VideoShortsView.swift */,
+			);
+			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		5A8540692E54ABD700B55456 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5A85406A2E54AD4600B55456 /* VideoPlayer.swift */,
+				5A85406C2E54AD6800B55456 /* VideoSwipeControls.swift */,
+				5A85406E2E54ADB000B55456 /* VideoOverlay.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		5AA077CB2E52764E00A920D5 /* HomePage */ = {
@@ -160,7 +216,6 @@
 				5AA077D52E528B5900A920D5 /* SubjectCardView.swift */,
 				5AA077D72E528B6F00A920D5 /* ToolsSectionView.swift */,
 				5AA077D92E528B8E00A920D5 /* ToolCardView.swift */,
-				5AA077DB2E528BAE00A920D5 /* BottomNavigationView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -172,6 +227,7 @@
 				5AF988E12E45D6F80087A78F /* PraklyneTests */,
 				5AF988EB2E45D6F80087A78F /* PraklyneUITests */,
 				5AF988CA2E45D6F40087A78F /* Products */,
+				5A0C77512E5568880002D647 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +244,8 @@
 		5AF988CB2E45D6F40087A78F /* Praklyne */ = {
 			isa = PBXGroup;
 			children = (
+				5A0C77522E5569F70002D647 /* Service */,
+				5A8540652E54A85000B55456 /* Global_Components */,
 				5A719AD02E4EEB6400298CD0 /* Helper */,
 				5A719ACD2E4EEB2B00298CD0 /* Models */,
 				5A719ACA2E4EE0D000298CD0 /* Info.plist */,
@@ -231,9 +289,9 @@
 		5AF988FB2E45D7140087A78F /* User_Interface */ = {
 			isa = PBXGroup;
 			children = (
+				5A8540682E54ABBF00B55456 /* VideoPlayer */,
 				5AA077CB2E52764E00A920D5 /* HomePage */,
 				5A76165A2E4C02ED00B7C85A /* Login.swift */,
-				5AA077E32E53E14400A920D5 /* VIdeoPlayer.swift */,
 			);
 			path = User_Interface;
 			sourceTree = "<group>";
@@ -389,17 +447,23 @@
 				5AA077E22E528D9200A920D5 /* ToolModel.swift in Sources */,
 				5AA077DC2E528BAE00A920D5 /* BottomNavigationView.swift in Sources */,
 				5AA077CE2E5276B900A920D5 /* HomeTopView.swift in Sources */,
+				5A85406B2E54AD4600B55456 /* VideoPlayer.swift in Sources */,
 				5AA077DA2E528B8E00A920D5 /* ToolCardView.swift in Sources */,
+				5A8540642E54A49A00B55456 /* MainTabNavigationView.swift in Sources */,
 				5A719AD22E4EEB7500298CD0 /* FirebaseManager.swift in Sources */,
 				5AF988CF2E45D6F40087A78F /* ContentView.swift in Sources */,
+				5A0C77542E556A050002D647 /* VideoService.swift in Sources */,
 				5AA077D22E528AD200A920D5 /* CourseCardView.swift in Sources */,
-				5AA077E42E53E14400A920D5 /* VIdeoPlayer.swift in Sources */,
+				5AA077E42E53E14400A920D5 /* VideoShortsView.swift in Sources */,
 				5A719ACC2E4EEAC300298CD0 /* Homepage.swift in Sources */,
 				5AA077D82E528B6F00A920D5 /* ToolsSectionView.swift in Sources */,
 				5AF988CD2E45D6F40087A78F /* PraklyneApp.swift in Sources */,
 				5AA077E02E528D7E00A920D5 /* SubjectModel.swift in Sources */,
 				5AF988D92E45D6F70087A78F /* Praklyne.xcdatamodeld in Sources */,
+				5A8540672E54AAA500B55456 /* VideoDatModel.swift in Sources */,
 				5AA077D42E528B3A00A920D5 /* SubjectsSectionView.swift in Sources */,
+				5A85406D2E54AD6800B55456 /* VideoSwipeControls.swift in Sources */,
+				5A85406F2E54ADB000B55456 /* VideoOverlay.swift in Sources */,
 				5AA077DE2E528D2F00A920D5 /* CoursesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
