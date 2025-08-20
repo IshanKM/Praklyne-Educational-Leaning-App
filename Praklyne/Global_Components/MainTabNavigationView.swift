@@ -3,6 +3,7 @@ import SwiftUI
 struct MainTabNavigationView: View {
     @Binding var selectedTab: Int
     @Binding var user: UserModel?
+    @ObservedObject var lockManager: LockManager
 
     var body: some View {
         VStack(spacing: 0) {
@@ -12,6 +13,8 @@ struct MainTabNavigationView: View {
                     HomeView(user: $user)
                 case 2:
                     VideoShortsView()
+                case 4:
+                    SettingsView(lockManager: lockManager)  // Profile
                 default:
                     HomeView(user: $user)
                 }
@@ -23,3 +26,4 @@ struct MainTabNavigationView: View {
         }
     }
 }
+

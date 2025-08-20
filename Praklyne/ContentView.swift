@@ -3,14 +3,14 @@ import FirebaseAuth
 
 struct ContentView: View {
     @State private var user: UserModel?
-    @State private var selectedTab: Int = 0
-
+    
     var body: some View {
         Group {
-            if user == nil {
-                SignInView(user: $user)
+            if let user = user {
+
+                RootView(user: $user)
             } else {
-                MainTabNavigationView(selectedTab: $selectedTab, user: $user)
+                SignInView(user: $user)
             }
         }
         .onAppear {
