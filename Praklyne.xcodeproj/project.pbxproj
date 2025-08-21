@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5A0C77542E556A050002D647 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0C77532E556A050002D647 /* VideoService.swift */; };
+		5A615ACE2E57047F0080E934 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A615ACD2E57047F0080E934 /* BooksView.swift */; };
+		5A615AD02E576E530080E934 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A615ACF2E576E530080E934 /* BookDetailView.swift */; };
 		5A719ABC2E4EC8FD00298CD0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5A719ABB2E4EC8FD00298CD0 /* FirebaseAnalytics */; };
 		5A719ABE2E4EC8FD00298CD0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A719ABD2E4EC8FD00298CD0 /* FirebaseAuth */; };
 		5A719AC02E4EC8FD00298CD0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A719ABF2E4EC8FD00298CD0 /* FirebaseFirestore */; };
@@ -70,6 +72,8 @@
 
 /* Begin PBXFileReference section */
 		5A0C77532E556A050002D647 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
+		5A615ACD2E57047F0080E934 /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
+		5A615ACF2E576E530080E934 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		5A719AC82E4ECE7E00298CD0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A719ACA2E4EE0D000298CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A719ACB2E4EEAC300298CD0 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
@@ -155,6 +159,15 @@
 				5A0C77532E556A050002D647 /* VideoService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		5A615ACC2E5704400080E934 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				5A615ACD2E57047F0080E934 /* BooksView.swift */,
+				5A615ACF2E576E530080E934 /* BookDetailView.swift */,
+			);
+			path = Books;
 			sourceTree = "<group>";
 		};
 		5A719ACD2E4EEB2B00298CD0 /* Models */ = {
@@ -307,6 +320,7 @@
 		5AF988FB2E45D7140087A78F /* User_Interface */ = {
 			isa = PBXGroup;
 			children = (
+				5A615ACC2E5704400080E934 /* Books */,
 				5ACE31EE2E564CFB005232DA /* PINFACEID */,
 				5A8540682E54ABBF00B55456 /* VideoPlayer */,
 				5AA077CB2E52764E00A920D5 /* HomePage */,
@@ -461,11 +475,13 @@
 			files = (
 				5AF988D62E45D6F70087A78F /* Persistence.swift in Sources */,
 				5A719ACF2E4EEB5700298CD0 /* UserModel.swift in Sources */,
+				5A615ACE2E57047F0080E934 /* BooksView.swift in Sources */,
 				5A76165B2E4C02ED00B7C85A /* Login.swift in Sources */,
 				5AA077D62E528B5900A920D5 /* SubjectCardView.swift in Sources */,
 				5AA077D02E528A3700A920D5 /* CoursesSectionView.swift in Sources */,
 				5AA077E22E528D9200A920D5 /* ToolModel.swift in Sources */,
 				5AA077DC2E528BAE00A920D5 /* BottomNavigationView.swift in Sources */,
+				5A615AD02E576E530080E934 /* BookDetailView.swift in Sources */,
 				5AA077CE2E5276B900A920D5 /* HomeTopView.swift in Sources */,
 				5A85406B2E54AD4600B55456 /* VideoPlayer.swift in Sources */,
 				5AA077DA2E528B8E00A920D5 /* ToolCardView.swift in Sources */,
