@@ -4,7 +4,8 @@ struct RootView: View {
     @StateObject var lockManager = LockManager()
     @Binding var user: UserModel?
     @State private var selectedTab: Int = 0
-
+    @StateObject private var onboardingManager = OnboardingManager()
+    
     var body: some View {
         ZStack {
             if lockManager.isLocked {
@@ -15,15 +16,21 @@ struct RootView: View {
                         .font(.largeTitle)
                         .foregroundColor(.orange)
                         .onAppear {
-                            lockManager.autoCheckFaceID() 
+                            lockManager.autoCheckFaceID()
                         }
                 }
             } else {
-                MainTabNavigationView(
-                    selectedTab: $selectedTab,
-                    user: $user,
-                    lockManager: lockManager
-                )
+                if onboardingManager.hasCompletedOnboarding {
+                    MainTabNavigationView(
+                        selectedTab: $selectedTab,
+                        user: $user,
+                        lockManager: lockManager
+                    )
+                } else {
+                    OnboardingView {
+                        onboardingManager.completeOnboarding()
+                    }
+                }
             }
         }
     }

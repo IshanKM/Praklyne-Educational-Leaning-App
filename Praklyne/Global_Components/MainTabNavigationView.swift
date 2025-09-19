@@ -14,7 +14,8 @@ struct MainTabNavigationView: View {
                 case 2:
                     VideoShortsView()
                 case 4:
-                    SettingsView(lockManager: lockManager)  // Profile
+                    SettingsView(lockManager: lockManager)
+                    //SettingsView()
                 default:
                     HomeView(user: $user)
                 }

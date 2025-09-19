@@ -14,7 +14,7 @@ struct ToolsSectionView: View {
             
  
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 30) {
+                HStack(spacing: 40) {
                     ForEach(tabs, id: \.self) { tab in
                         VStack(spacing: 8) {
                             Text(tab)
@@ -50,7 +50,7 @@ struct ToolsSectionView: View {
                 Tool(id: 1, name: "Your vocabulary list", icon: "book.fill", color: .orange),
                 Tool(id: 2, name: "Learning with AI", icon: "brain.head.profile", color: .blue),
                 Tool(id: 3, name: "Listing Content", icon: "headphones", color: .green),
-                Tool(id: 4, name: "English Books", icon: "books.vertical.fill", color: .purple)
+                Tool(id: 4, name: "Books", icon: "books.vertical.fill", color: .purple)
             ]
         case "Science":
             return [

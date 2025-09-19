@@ -1,6 +1,4 @@
-
 import SwiftUI
-import Foundation
 
 struct CoursesSectionView: View {
     let courses = [
@@ -14,11 +12,36 @@ struct CoursesSectionView: View {
         )
     ]
     
+    @State private var enrolledCourse: EnrolledCourse? =
+        UserDefaults.standard.loadCourse(forKey: "enrolledCourse")
+    
+    @State private var navigateToIntro = false
+    @State private var navigateToProgress = false
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
                 ForEach(courses, id: \.id) { course in
-                    CourseCardView(course: course)
+                    NavigationLink(
+                        destination: UserDefaults.standard.bool(forKey: "hasSeenIntro")
+                            ? AnyView(CourseProgressView())
+                            : AnyView(CourseIntroView()
+                                .onDisappear {
+                                    UserDefaults.standard.set(true, forKey: "hasSeenIntro")
+                                }
+                            ),
+                        isActive: UserDefaults.standard.bool(forKey: "hasSeenIntro")
+                            ? $navigateToProgress
+                            : $navigateToIntro
+                    ) {
+                        CourseCardView(
+                            course: course,
+                            enrolledCourse: $enrolledCourse,
+                            navigateToIntro: $navigateToIntro,
+                            navigateToProgress: $navigateToProgress
+                        )
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
             .padding(.horizontal, 16)
@@ -35,3 +58,4 @@ struct CoursesSectionView: View {
         .padding(.top, 10)
     }
 }
+

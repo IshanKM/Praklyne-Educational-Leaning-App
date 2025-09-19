@@ -22,7 +22,7 @@ extension Book {
              rating: 4.2,
              pages:250,
              coverImage: "book_fallen_night",
-             pdfFileName: "fallen_night.pdf",
+             pdfFileName: "example_book",
              readingProgress: 0.3,
              description: "An epic standalone prequel with dragons, ancient magic, and warring kingdoms."),
         Book(title: "The Best Novel",
@@ -31,7 +31,7 @@ extension Book {
              rating: 4.0,
              pages:300,
              coverImage: "book_best_novel",
-             pdfFileName: "best_novel.pdf",
+             pdfFileName: "example_book",
              description: "A celebrated fantasy tale praised for its worldbuilding and character depth."),
         Book(title: "The 100 Best Novels",
              author: "Robert McCrum",
@@ -39,7 +39,7 @@ extension Book {
              rating: 4.0,
              pages:150,
              coverImage: "book_100_best",
-             pdfFileName: "100_best.pdf",
+             pdfFileName: "example_book",
              description: "A curated anthology highlighting influential novels across eras."),
         Book(title: "The WOLF DEN",
              author: "ELODIE HARPER",
@@ -47,7 +47,7 @@ extension Book {
              rating: 4.0,
              pages:450,
              coverImage: "book_wolf_den",
-             pdfFileName: "wolf_den.pdf",
+             pdfFileName: "example_book",
              description: "A gripping historical tale of survival and power in ancient Pompeii."),
         Book(title: "Sci-Fi Adventure",
              author: "John Smith",
@@ -55,7 +55,7 @@ extension Book {
              rating: 4.5,
              pages:400,
              coverImage: "book_scifi",
-             pdfFileName: "scifi.pdf",
+             pdfFileName: "example_book",
              description: "A high-octane journey through space with bold ideas and heart."),
         Book(title: "Classic Tale",
              author: "Jane Doe",
@@ -219,6 +219,8 @@ struct BooksView: View {
 
 struct ContinueReadingCard: View {
     let book: Book
+    @State private var showPDF = false
+    @State private var readingProgress: Double = 0.0
     
     var body: some View {
         HStack(spacing: 12) {
@@ -248,13 +250,16 @@ struct ContinueReadingCard: View {
                         .foregroundColor(.gray)
                 }
                 
-                Button("Read Book") {}
-                    .font(.caption)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 6)
-                    .background(Color.orange)
-                    .foregroundColor(.white)
-                    .cornerRadius(15)
+                Button("Read Book") {
+                    readingProgress = book.readingProgress
+                    showPDF = true
+                }
+                .font(.caption)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(Color.orange)
+                .foregroundColor(.white)
+                .cornerRadius(15)
             }
             
             Spacer()
@@ -264,8 +269,12 @@ struct ContinueReadingCard: View {
         .cornerRadius(12)
         .shadow(color: .gray.opacity(0.2), radius: 4, x: 0, y: 2)
         .frame(width: 280)
+        .fullScreenCover(isPresented: $showPDF) {
+            PDFReaderView(book: book, progress: $readingProgress)
+        }
     }
 }
+
 
 
 struct CategoryTab: View {
@@ -290,6 +299,7 @@ struct CategoryTab: View {
 
 struct BookCard: View {
     let book: Book
+    @State private var showDetail = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -321,10 +331,13 @@ struct BookCard: View {
                     
                     Spacer()
                     
-                    Button(action: {}) {
+                    Button(action: { showDetail = true }) {
                         Image(systemName: "arrow.right.circle.fill")
                             .foregroundColor(.orange)
                             .font(.title3)
+                    }
+                    .fullScreenCover(isPresented: $showDetail) {
+                        BookDetailView(book: book)
                     }
                 }
             }

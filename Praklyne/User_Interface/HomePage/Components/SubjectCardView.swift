@@ -1,26 +1,30 @@
 import SwiftUI
-import Foundation
-
 
 struct SubjectCardView: View {
     let subject: Subject
+    @State private var showTopics = false
     
     var body: some View {
-        VStack(spacing: 8) {
-            Image(systemName: subject.icon)
-                .font(.system(size: 24))
-                .foregroundColor(.white)
-                .frame(width: 50, height: 50)
-                .background(subject.color)
-                .cornerRadius(12)
-            
-            Text(subject.name)
-                .font(.caption)
-                .fontWeight(.medium)
-                .foregroundColor(.white)
+        Button(action: {
+            showTopics = true
+        }) {
+            VStack(spacing: 8) {
+                Image(systemName: subject.icon)
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .frame(width: 100, height: 100)
+                    .background(subject.color)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                
+                Text(subject.name)
+                    .font(.caption)
+                    .fontWeight(.medium)
+                    .foregroundColor(.primary)
+                    .multilineTextAlignment(.center)
+            }
         }
-        .frame(width: 100, height: 100)
-        .background(subject.color)
-        .cornerRadius(16)
+        .sheet(isPresented: $showTopics) {
+            TopicsListView(subject: subject)
+        }
     }
 }

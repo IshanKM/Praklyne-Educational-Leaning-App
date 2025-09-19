@@ -1,17 +1,20 @@
 import SwiftUI
 
 struct BookDetailView: View {
-    let book: Book
+    @State var book: Book
     @State private var isFavorite = false
     @State private var showReviews = false
-    
+    @State private var showPDFReader = false
+    @State private var readingProgress: Double = 0.0
+
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-        
                 HStack {
                     Button(action: {
-               
+                        dismiss()
                     }) {
                         Image(systemName: "arrow.left")
                             .font(.system(size: 20))
@@ -47,7 +50,7 @@ struct BookDetailView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 10)
                 
-               
+          
                 Image(book.coverImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -56,9 +59,9 @@ struct BookDetailView: View {
                     .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 4)
                     .padding(.top, 30)
                 
-             
+            
                 HStack(spacing: 20) {
-             
+              
                     HStack(spacing: 4) {
                         Image(systemName: "star.fill")
                             .foregroundColor(.orange)
@@ -68,7 +71,7 @@ struct BookDetailView: View {
                             .foregroundColor(.black)
                     }
                     
-                
+                 
                     Text(book.category)
                         .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.white)
@@ -77,12 +80,12 @@ struct BookDetailView: View {
                         .background(Color.orange)
                         .cornerRadius(15)
                     
-                
+                    
                     Text("\(book.pages) pages")
                         .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.black)
                     
-                   
+                    
                     if book.readingProgress > 0 {
                         Text("\(Int(book.readingProgress * 100))% Read")
                             .font(.system(size: 14, weight: .medium))
@@ -91,7 +94,7 @@ struct BookDetailView: View {
                 }
                 .padding(.top, 25)
                 
-              
+                
                 VStack(alignment: .leading, spacing: 16) {
                     Text("Summary")
                         .font(.system(size: 20, weight: .bold))
@@ -106,7 +109,7 @@ struct BookDetailView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 30)
                 
-         
+               
                 HStack(spacing: 16) {
                     Button(action: {
                         showReviews = true
@@ -120,7 +123,8 @@ struct BookDetailView: View {
                     }
                     
                     Button(action: {
-               
+                        readingProgress = book.readingProgress
+                        showPDFReader = true
                     }) {
                         Text("Read This Book")
                             .font(.system(size: 16, weight: .semibold))
@@ -130,6 +134,13 @@ struct BookDetailView: View {
                             .background(Color.green)
                             .cornerRadius(12)
                     }
+                    .fullScreenCover(isPresented: $showPDFReader) {
+                        PDFReaderView(book: book, progress: $readingProgress)
+                            .onDisappear {
+                                book.readingProgress = readingProgress
+                            }
+                    }
+
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 30)
@@ -139,7 +150,7 @@ struct BookDetailView: View {
         .background(Color.white)
         .navigationBarHidden(true)
         .sheet(isPresented: $showReviews) {
-     
+         
         }
     }
 }

@@ -1,6 +1,8 @@
 import SwiftUI
 import FirebaseAuth
 
+
+
 struct ContentView: View {
     @State private var user: UserModel?
     
@@ -10,7 +12,7 @@ struct ContentView: View {
 
                 RootView(user: $user)
             } else {
-                SignInView(user: $user)
+                LoginView(user: $user)
             }
         }
         .onAppear {
@@ -20,3 +22,4 @@ struct ContentView: View {
         }
     }
 }
+

@@ -14,6 +14,8 @@ struct SubjectsSectionView: View {
         Subject(id: 6, name: "Geography", color: .teal, icon: "globe")
     ]
     
+   
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 40) {
             HStack {
