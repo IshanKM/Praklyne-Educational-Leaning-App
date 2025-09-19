@@ -1,13 +1,13 @@
 import SwiftUI
-import Foundation
-
 
 struct CourseCardView: View {
     let course: Course
+    @Binding var enrolledCourse: EnrolledCourse?
+    @Binding var navigateToIntro: Bool
+    @Binding var navigateToProgress: Bool
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-       
             ZStack {
                 RoundedRectangle(cornerRadius: 12)
                     .fill(LinearGradient(
@@ -17,7 +17,6 @@ struct CourseCardView: View {
                     ))
                     .frame(height: 180)
                 
-      
                 Image(course.image)
                     .resizable()
                     .scaledToFill()
@@ -28,7 +27,6 @@ struct CourseCardView: View {
                         RoundedRectangle(cornerRadius: 12)
                             .stroke(Color.black.opacity(0.1), lineWidth: 0.5)
                     )
-
             }
             
             VStack(alignment: .leading, spacing: 8) {
@@ -46,36 +44,58 @@ struct CourseCardView: View {
                     .foregroundColor(.gray)
                 
                 HStack {
-                    HStack(spacing: 4) {
-                        Image(systemName: "star.fill")
-                            .foregroundColor(.yellow)
-                            .font(.caption)
-                        Text("\(course.rating, specifier: "%.1f")")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                    }
-                    
                     Spacer()
-                    
-                    Button(action: {}) {
-                        Text("Enroll")
-                            .font(.subheadline)
-                            .fontWeight(.medium)
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 24)
-                            .padding(.vertical, 8)
-                            .background(Color.blue)
-                            .cornerRadius(20)
+                    if enrolledCourse?.id == course.id {
+                        Button("Continue") {
+                            if UserDefaults.standard.bool(forKey: "hasSeenIntro") {
+                                navigateToProgress = true
+                            } else {
+                                navigateToIntro = true
+                            }
+                        }
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 8)
+                        .background(Color.green)
+                        .cornerRadius(20)
+                    } else {
+                        Button("Enroll") {
+                            let newCourse = EnrolledCourse(
+                                id: course.id,
+                                title: course.title,
+                                startDate: Date(),
+                                completedDays: 0,
+                                totalDays: 30
+                            )
+                            enrolledCourse = newCourse
+                            UserDefaults.standard.saveCourse(newCourse, forKey: "enrolledCourse")
+                            
+                            NotificationManager.shared.sendEnrollmentNotification(for: course.title)
+                            
+                            navigateToIntro = true
+                        }
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 8)
+                        .background(Color.blue)
+                        .cornerRadius(20)
                     }
+                    Spacer()
                 }
+                .padding(.top, 8)
             }
+            .frame(maxHeight: .infinity, alignment: .bottom)
             .padding(.horizontal, 12)
             .padding(.bottom, 16)
         }
-        .frame(width: 300)
+        .frame(width: 300, height: 320)
         .background(Color.white)
         .cornerRadius(16)
         .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 4)
+        
     }
 }
-

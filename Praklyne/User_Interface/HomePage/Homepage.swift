@@ -1,3 +1,4 @@
+// HomeView.swift
 import SwiftUI
 
 struct HomeView: View {
@@ -5,7 +6,6 @@ struct HomeView: View {
     
     @State private var selectedToolsTab = "English"
     @State private var showAllSubjects = false
-    @State private var selectedBottomTab = 0
     
     var body: some View {
         NavigationView {
@@ -15,8 +15,10 @@ struct HomeView: View {
                     HeaderView(user: user)
                     
                     CoursesSectionView()
-                  
+                    
                     SubjectsSectionView(showAll: $showAllSubjects)
+                    
+                    //SubjectsSectionView(showAll: $showAllSubjects)
                     
                     Spacer()
                     
@@ -28,7 +30,6 @@ struct HomeView: View {
             }
             .background(Color(.systemBackground))
         }
-        
     }
 }
 
@@ -39,4 +40,3 @@ struct HomeView_Previews: PreviewProvider {
         HomeView(user: $previewUser)
     }
 }
-

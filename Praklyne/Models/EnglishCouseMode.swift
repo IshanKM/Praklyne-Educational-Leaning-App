@@ -1,6 +1,8 @@
 import Foundation
+import SwiftUI
 
-struct Course: Identifiable {
+
+struct EnglishCourse: Identifiable {
     let id: Int
     let title: String
     let description: String
@@ -8,3 +10,5 @@ struct Course: Identifiable {
     let rating: Double
     let image: String
 }
+
+
