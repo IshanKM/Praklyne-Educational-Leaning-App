@@ -1,15 +1,12 @@
 import SwiftUI
 import FirebaseAuth
 
-
-
 struct ContentView: View {
     @State private var user: UserModel?
     
     var body: some View {
         Group {
-            if let user = user {
-
+            if let _ = user {
                 RootView(user: $user)
             } else {
                 LoginView(user: $user)
@@ -22,4 +19,3 @@ struct ContentView: View {
         }
     }
 }
-

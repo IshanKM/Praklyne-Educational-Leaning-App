@@ -2,9 +2,8 @@ import SwiftUI
 import FirebaseAuth
 
 struct SettingsView: View {
+    @Binding var user: UserModel?
     @State private var navigateToFaceID = false
-    @Environment(\.presentationMode) var presentationMode
-    @State private var user: UserModel?
     @ObservedObject var lockManager: LockManager
     
     var body: some View {
@@ -59,7 +58,6 @@ struct SettingsView: View {
             }
             .padding(.bottom, 40)
             
-       
             VStack(spacing: 0) {
                 SettingsMenuItem(title: "Notifications") { }
                 SettingsMenuItem(title: "Face ID") {
@@ -71,16 +69,9 @@ struct SettingsView: View {
             
             Spacer()
             
-       
+           
             Button(action: {
-                do {
-                    try Auth.auth().signOut()
-                    
-                    UIApplication.shared.windows.first?.rootViewController =
-                        UIHostingController(rootView: LoginView(user: $user))
-                } catch {
-                    print("Error signing out: \(error)")
-                }
+                logout()
             }) {
                 Text("Logout")
                     .font(.system(size: 18, weight: .semibold))
@@ -99,8 +90,16 @@ struct SettingsView: View {
             FaceIDView(lockManager: lockManager)
         }
     }
+    
+    private func logout() {
+        do {
+            try Auth.auth().signOut()
+            user = nil  
+        } catch {
+            print("Error signing out: \(error.localizedDescription)")
+        }
+    }
 }
-
 
 struct SettingsMenuItem: View {
     let title: String

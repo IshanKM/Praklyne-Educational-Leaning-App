@@ -57,7 +57,7 @@
 		5AA077E42E53E14400A920D5 /* VideoShortsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA077E32E53E14400A920D5 /* VideoShortsView.swift */; };
 		5ACE31E62E5614D0005232DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE31E52E5614D0005232DA /* SettingsView.swift */; };
 		5ACE31F02E564D11005232DA /* PINEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE31EF2E564D11005232DA /* PINEntryView.swift */; };
-		5ACE31F22E564DF0005232DA /* LockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE31F12E564DF0005232DA /* LockManager.swift */; };
+		5ACE31F22E564DF0005232DA /*    .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE31F12E564DF0005232DA /*    .swift */; };
 		5ACE31F42E5651E5005232DA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE31F32E5651E5005232DA /* RootView.swift */; };
 		5ADDD02C2E5792C5004DD8F4 /* PDFReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDD02B2E5792C5004DD8F4 /* PDFReader.swift */; };
 		5ADDD02E2E579724004DD8F4 /* example_book.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDD02D2E579723004DD8F4 /* example_book.pdf */; };
@@ -134,7 +134,7 @@
 		5AA077E32E53E14400A920D5 /* VideoShortsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoShortsView.swift; sourceTree = "<group>"; };
 		5ACE31E52E5614D0005232DA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5ACE31EF2E564D11005232DA /* PINEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINEntryView.swift; sourceTree = "<group>"; };
-		5ACE31F12E564DF0005232DA /* LockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockManager.swift; sourceTree = "<group>"; };
+		5ACE31F12E564DF0005232DA /*    .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "   .swift"; sourceTree = "<group>"; };
 		5ACE31F32E5651E5005232DA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		5ADDD02B2E5792C5004DD8F4 /* PDFReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReader.swift; sourceTree = "<group>"; };
 		5ADDD02D2E579723004DD8F4 /* example_book.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = example_book.pdf; sourceTree = "<group>"; };
@@ -356,7 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				5ACE31EF2E564D11005232DA /* PINEntryView.swift */,
-				5ACE31F12E564DF0005232DA /* LockManager.swift */,
+				5ACE31F12E564DF0005232DA /*    .swift */,
 			);
 			path = PINFACEID;
 			sourceTree = "<group>";
@@ -616,7 +616,7 @@
 				5A7C94692E7D6DE600377011 /* OnboardingManager.swift in Sources */,
 				5AA077D22E528AD200A920D5 /* CourseCardView.swift in Sources */,
 				5A758AC92E7C690E0050F97E /* EnglishCourseIntro.swift in Sources */,
-				5ACE31F22E564DF0005232DA /* LockManager.swift in Sources */,
+				5ACE31F22E564DF0005232DA /*    .swift in Sources */,
 				5A758AC72E7C02240050F97E /* CourseVideoView.swift in Sources */,
 				5A7C946D2E7DA51800377011 /* Profile.swift in Sources */,
 				5A7D6D9E2E7B7BEA00703166 /* EnrolledCourse.swift in Sources */,
