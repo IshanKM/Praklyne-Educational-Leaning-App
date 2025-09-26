@@ -493,7 +493,7 @@ struct AddWordView: View {
     @State private var englishWord = ""
     @State private var sinhalaTranslation = ""
     @State private var selectedCategory = "General"
-    @State private var selectedDifficulty = 3
+    @State private var selectedDifficulty  = 3
     
     let onAddWord: (VocabularyWord) -> Void
     
