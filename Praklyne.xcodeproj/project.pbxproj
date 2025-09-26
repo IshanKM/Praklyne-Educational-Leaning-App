@@ -69,6 +69,7 @@
 		5AF988E32E45D6F80087A78F /* PraklyneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988E22E45D6F80087A78F /* PraklyneTests.swift */; };
 		5AF988ED2E45D6F80087A78F /* PraklyneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988EC2E45D6F80087A78F /* PraklyneUITests.swift */; };
 		5AF988EF2E45D6F80087A78F /* PraklyneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988EE2E45D6F80087A78F /* PraklyneUITestsLaunchTests.swift */; };
+		86A567582E8638D400699571 /* CourseProgressIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A567572E8638CE00699571 /* CourseProgressIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		5AF988E82E45D6F80087A78F /* PraklyneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PraklyneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF988EC2E45D6F80087A78F /* PraklyneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraklyneUITests.swift; sourceTree = "<group>"; };
 		5AF988EE2E45D6F80087A78F /* PraklyneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraklyneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86A567572E8638CE00699571 /* CourseProgressIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseProgressIntent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +276,7 @@
 		5A7D6D9A2E7B4F0900703166 /* EnglishCourse */ = {
 			isa = PBXGroup;
 			children = (
+				86A567562E8638BF00699571 /* Siri */,
 				5A758ACA2E7CC0140050F97E /* VIewModel */,
 				5A7D6D9B2E7B4F3000703166 /* EnglishCoursePage.swift */,
 				5A7D6D9D2E7B7BEA00703166 /* EnrolledCourse.swift */,
@@ -448,6 +451,14 @@
 			path = User_Interface;
 			sourceTree = "<group>";
 		};
+		86A567562E8638BF00699571 /* Siri */ = {
+			isa = PBXGroup;
+			children = (
+				86A567572E8638CE00699571 /* CourseProgressIntent.swift */,
+			);
+			path = Siri;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -593,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A758ADD2E7CE2430050F97E /* CourseDataModel.xcdatamodeld in Sources */,
+				86A567582E8638D400699571 /* CourseProgressIntent.swift in Sources */,
 				5A719ACF2E4EEB5700298CD0 /* UserModel.swift in Sources */,
 				5A758AC52E7BE4D80050F97E /* VocabularyView.swift in Sources */,
 				5A615ACE2E57047F0080E934 /* BooksView.swift in Sources */,
@@ -803,11 +815,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Praklyne/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Used to sign in with Apple ID.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = " Use Face ID to quickly and securely access your app ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -833,11 +848,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Praklyne/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Used to sign in with Apple ID.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = " Use Face ID to quickly and securely access your app ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
