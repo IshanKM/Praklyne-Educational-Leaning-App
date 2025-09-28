@@ -3,46 +3,24 @@ import WebKit
 
 struct CourseIntroView: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack(spacing: 0) {
-          
                     headerSection
-                    
-       
                     videoPlayerSection
-                    
-           
                     noticeSection
-                    
-        
                     actionButtonSection
-                    
                     Spacer(minLength: 40)
                 }
             }
             .background(Color(.systemBackground))
-            .navigationBarHidden(true)
+            .navigationTitle("Course Intro")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     
     private var headerSection: some View {
         VStack(spacing: 16) {
-        
-            HStack {
-                Button(action: {
-                
-                }) {
-                    Image(systemName: "chevron.left")
-                        .font(.title2)
-                        .foregroundColor(.primary)
-                }
-                Spacer()
-            }
-            .padding(.horizontal, 20)
-            .padding(.top, 10)
-            
-       
             VStack(spacing: 8) {
                 Text("English Learning Course")
                     .font(.system(size: 28, weight: .bold, design: .serif))
@@ -61,21 +39,19 @@ struct CourseIntroView: View {
     
     private var videoPlayerSection: some View {
         VStack(spacing: 16) {
-     
             YouTubeIntroPlayerView(videoID: "GUZauFzCyG0")
                 .frame(height: 220)
                 .cornerRadius(16)
                 .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 4)
                 .padding(.horizontal, 20)
             
-       
             VStack(spacing: 8) {
                 Text("Course Introduction Video")
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundColor(.primary)
                 
                 Text("Watch this essential introduction to understand how to get the most out of your English learning journey")
-                    .font(.system(size: 14, weight: .regular))
+                    .font(.system(size: 14))
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
                     .lineLimit(3)
@@ -87,7 +63,6 @@ struct CourseIntroView: View {
     
     private var noticeSection: some View {
         VStack(spacing: 20) {
-   
             ZStack {
                 Circle()
                     .fill(Color.red.opacity(0.1))
@@ -98,14 +73,13 @@ struct CourseIntroView: View {
                     .foregroundColor(.red)
             }
             
-     
             VStack(spacing: 16) {
                 Text("Important Notice")
                     .font(.system(size: 22, weight: .bold))
                     .foregroundColor(.primary)
                 
-                Text("Before starting this course, please watch this video and get a clear idea about how to continue this course. If you follow the same process as this video, you will get better results at the end of the course.")
-                    .font(.system(size: 16, weight: .regular))
+                Text("Before starting this course, please watch this video and get a clear idea about how to continue this course.")
+                    .font(.system(size: 16))
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
                     .lineSpacing(4)
@@ -128,13 +102,11 @@ struct CourseIntroView: View {
     
     private var actionButtonSection: some View {
         VStack(spacing: 16) {
-   
             NavigationLink(destination: CourseProgressView()
-                            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)) {
+                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)) {
                 HStack(spacing: 12) {
                     Image(systemName: "play.circle.fill")
                         .font(.system(size: 20, weight: .semibold))
-                    
                     Text("Go to the Course")
                         .font(.system(size: 18, weight: .semibold))
                 }
@@ -152,15 +124,10 @@ struct CourseIntroView: View {
                 .shadow(color: Color.green.opacity(0.3), radius: 8, x: 0, y: 4)
             }
             .padding(.horizontal, 20)
-            
-       
-            Text("Ready to start your English learning journey?")
-                .font(.system(size: 14, weight: .medium))
-                .foregroundColor(.secondary)
-                .padding(.top, 8)
         }
     }
 }
+
 
 
 struct YouTubeIntroPlayerView: UIViewRepresentable {

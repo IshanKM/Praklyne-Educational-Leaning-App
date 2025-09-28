@@ -9,14 +9,20 @@ struct RootView: View {
     var body: some View {
         ZStack {
             if lockManager.isLocked {
-                if lockManager.requiresPIN {
+                if lockManager.requiresPIN || lockManager.pinEnabled {
                     PINEntryView(lockManager: lockManager)
-                } else {
+                } else if lockManager.faceIDEnabled {
                     Text("Unlocking...")
                         .font(.largeTitle)
                         .foregroundColor(.orange)
                         .onAppear {
                             lockManager.autoCheckFaceID()
+                        }
+                } else {
+                    // No PIN or FaceID -> unlock automatically
+                    Text("Welcome!")
+                        .onAppear {
+                            lockManager.isLocked = false
                         }
                 }
             } else {

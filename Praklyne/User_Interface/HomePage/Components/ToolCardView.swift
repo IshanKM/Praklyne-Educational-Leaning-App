@@ -26,7 +26,7 @@ struct ToolCardView: View {
             .cornerRadius(12)
             .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
         }
-        .buttonStyle(PlainButtonStyle()) // remove blue highlight
+        .buttonStyle(PlainButtonStyle())
     }
     
     @ViewBuilder
@@ -37,7 +37,7 @@ struct ToolCardView: View {
         case "Books":
             BooksView()
         default:
-            Text("\(tool.name) coming soon 🚀")
+            ComingSoonView()
         }
     }
 }

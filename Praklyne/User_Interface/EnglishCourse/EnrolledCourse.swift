@@ -1,4 +1,4 @@
-// EnrolledCourse.swift
+
 import Foundation
 
 struct EnrolledCourse: Codable, Identifiable {
@@ -9,7 +9,7 @@ struct EnrolledCourse: Codable, Identifiable {
     var totalDays: Int
 }
 
-// MARK: - UserDefaults Helpers
+
 extension UserDefaults {
     func saveCourse(_ course: EnrolledCourse, forKey key: String) {
         if let encoded = try? JSONEncoder().encode(course) {

@@ -2,50 +2,32 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-
-    <key>CFBundleName</key>
-    <string>Praklyne</string>
-    <key>CFBundleIdentifier</key>
-    <string>IshanKM.Praklyne</string>
-    <key>CFBundleVersion</key>
-    <string>1.0</string>
-    <key>CFBundleShortVersionString</key>
-    <string>1.0</string>
-
-   
-    <key>GIDClientID</key>
-    <string>756028124724-rk5gbi1m7a97iool8pc9pmthrb6dcrn6.apps.googleusercontent.com</string>
-
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>Editor</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-   
-                <string>com.googleusercontent.apps.756028124724-rk5gbi1m7a97iool8pc9pmthrb6dcrn6</string>
-            </array>
-        </dict>
-    </array>
-
-
-    <key>CLIENT_ID</key>
-    <string>756028124724-rk5gbi1m7a97iool8pc9pmthrb6dcrn6.apps.googleusercontent.com</string>
-    <key>REVERSED_CLIENT_ID</key>
-    <string>com.googleusercontent.apps.756028124724-rk5gbi1m7a97iool8pc9pmthrb6dcrn6</string>
-    <key>GOOGLE_APP_ID</key>
-    <string>1:756028124724:ios:17736136af554a01bca461</string>
-    <key>PROJECT_ID</key>
-    <string>praklyne</string>
-    <key>BUNDLE_ID</key>
-    <string>IshanKM.Praklyne</string>
-
-
-    <key>NSAppleMusicUsageDescription</key>
-    <string>Used to sign in with Apple ID.</string>
+	<key>BUNDLE_ID</key>
+	<string>IshanKM.Praklyne</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.756028124724-rk5gbi1m7a97iool8pc9pmthrb6dcrn6</string>
+			</array>
+		</dict>
+	</array>
+	<key>CLIENT_ID</key>
+	<string>756028124724-rk5gbi1m7a97iool8pc9pmthrb6dcrn6.apps.googleusercontent.com</string>
+	<key>GIDClientID</key>
+	<string>756028124724-rk5gbi1m7a97iool8pc9pmthrb6dcrn6.apps.googleusercontent.com</string>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:756028124724:ios:17736136af554a01bca461</string>
+	<key>PROJECT_ID</key>
+	<string>praklyne</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.756028124724-rk5gbi1m7a97iool8pc9pmthrb6dcrn6</string>
     
-    <key>NSFaceIDUsageDescription</key>
-    <string> Use Face ID to quickly and securely access your app </string>
+    <key>NSSiriUsageDescription</key>
+    <string>This app uses Siri to answer course progress questions.</string>
+    
 </dict>
 </plist>

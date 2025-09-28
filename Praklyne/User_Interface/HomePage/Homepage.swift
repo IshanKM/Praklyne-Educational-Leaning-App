@@ -1,4 +1,4 @@
-// HomeView.swift
+
 import SwiftUI
 
 struct HomeView: View {
@@ -7,7 +7,7 @@ struct HomeView: View {
     @State private var selectedToolsTab = "English"
     @State private var showAllSubjects = false
     
-    var body: some View {
+    var body: some View {x
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {

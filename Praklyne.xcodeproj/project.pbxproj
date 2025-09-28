@@ -57,7 +57,7 @@
 		5AA077E42E53E14400A920D5 /* VideoShortsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA077E32E53E14400A920D5 /* VideoShortsView.swift */; };
 		5ACE31E62E5614D0005232DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE31E52E5614D0005232DA /* SettingsView.swift */; };
 		5ACE31F02E564D11005232DA /* PINEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE31EF2E564D11005232DA /* PINEntryView.swift */; };
-		5ACE31F22E564DF0005232DA /* LockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE31F12E564DF0005232DA /* LockManager.swift */; };
+		5ACE31F22E564DF0005232DA /*    .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE31F12E564DF0005232DA /*    .swift */; };
 		5ACE31F42E5651E5005232DA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE31F32E5651E5005232DA /* RootView.swift */; };
 		5ADDD02C2E5792C5004DD8F4 /* PDFReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDD02B2E5792C5004DD8F4 /* PDFReader.swift */; };
 		5ADDD02E2E579724004DD8F4 /* example_book.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDD02D2E579723004DD8F4 /* example_book.pdf */; };
@@ -69,6 +69,22 @@
 		5AF988E32E45D6F80087A78F /* PraklyneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988E22E45D6F80087A78F /* PraklyneTests.swift */; };
 		5AF988ED2E45D6F80087A78F /* PraklyneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988EC2E45D6F80087A78F /* PraklyneUITests.swift */; };
 		5AF988EF2E45D6F80087A78F /* PraklyneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF988EE2E45D6F80087A78F /* PraklyneUITestsLaunchTests.swift */; };
+		860BEFCA2E87D17B00492644 /* FavoriteBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFC92E87D17900492644 /* FavoriteBooksView.swift */; };
+		860BEFCD2E87DC6200492644 /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFCC2E87DC5B00492644 /* ComingSoonView.swift */; };
+		860BEFCF2E87FDBB00492644 /* LeaningYouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFCE2E87FDB300492644 /* LeaningYouTubePlayerView.swift */; };
+		860BEFD12E880A3D00492644 /* LeaningData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFD02E880A3800492644 /* LeaningData.swift */; };
+		860BEFD32E88C22000492644 /* VocabularyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFD22E88C21A00492644 /* VocabularyManager.swift */; };
+		860BEFD52E88C25800492644 /* TodayVocabularyIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFD42E88C25700492644 /* TodayVocabularyIntent.swift */; };
+		860BEFD72E89091700492644 /* Vocabularydata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFD62E89090900492644 /* Vocabularydata.swift */; };
+		860BEFD92E89098300492644 /* PersonalWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFD82E89097D00492644 /* PersonalWordView.swift */; };
+		860BEFDB2E890B8300492644 /* ImportantWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFDA2E890B8100492644 /* ImportantWordsView.swift */; };
+		860BEFDF2E890C4300492644 /* wordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFDE2E890C3D00492644 /* wordCard.swift */; };
+		860BEFE12E890C5200492644 /* addword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFE02E890C4E00492644 /* addword.swift */; };
+		860BEFE32E890F7B00492644 /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFE22E890F7800492644 /* BookData.swift */; };
+		860BEFE92E891CED00492644 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BEFE82E891CE600492644 /* NotificationView.swift */; };
+		86A567582E8638D400699571 /* CourseProgressIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A567572E8638CE00699571 /* CourseProgressIntent.swift */; };
+		86A567622E868DD400699571 /* VocabularyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86A567602E868DD400699571 /* VocabularyModel.xcdatamodeld */; };
+		86A567642E868E9D00699571 /* VocabularyPersistence.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A567632E868E9B00699571 /* VocabularyPersistence.swift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,7 +150,7 @@
 		5AA077E32E53E14400A920D5 /* VideoShortsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoShortsView.swift; sourceTree = "<group>"; };
 		5ACE31E52E5614D0005232DA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5ACE31EF2E564D11005232DA /* PINEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINEntryView.swift; sourceTree = "<group>"; };
-		5ACE31F12E564DF0005232DA /* LockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockManager.swift; sourceTree = "<group>"; };
+		5ACE31F12E564DF0005232DA /*    .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "   .swift"; sourceTree = "<group>"; };
 		5ACE31F32E5651E5005232DA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		5ADDD02B2E5792C5004DD8F4 /* PDFReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReader.swift; sourceTree = "<group>"; };
 		5ADDD02D2E579723004DD8F4 /* example_book.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = example_book.pdf; sourceTree = "<group>"; };
@@ -149,6 +165,23 @@
 		5AF988E82E45D6F80087A78F /* PraklyneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PraklyneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF988EC2E45D6F80087A78F /* PraklyneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraklyneUITests.swift; sourceTree = "<group>"; };
 		5AF988EE2E45D6F80087A78F /* PraklyneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraklyneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		860BEFC92E87D17900492644 /* FavoriteBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBooksView.swift; sourceTree = "<group>"; };
+		860BEFCC2E87DC5B00492644 /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
+		860BEFCE2E87FDB300492644 /* LeaningYouTubePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaningYouTubePlayerView.swift; sourceTree = "<group>"; };
+		860BEFD02E880A3800492644 /* LeaningData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaningData.swift; sourceTree = "<group>"; };
+		860BEFD22E88C21A00492644 /* VocabularyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyManager.swift; sourceTree = "<group>"; };
+		860BEFD42E88C25700492644 /* TodayVocabularyIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVocabularyIntent.swift; sourceTree = "<group>"; };
+		860BEFD62E89090900492644 /* Vocabularydata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabularydata.swift; sourceTree = "<group>"; };
+		860BEFD82E89097D00492644 /* PersonalWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalWordView.swift; sourceTree = "<group>"; };
+		860BEFDA2E890B8100492644 /* ImportantWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantWordsView.swift; sourceTree = "<group>"; };
+		860BEFDE2E890C3D00492644 /* wordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordCard.swift; sourceTree = "<group>"; };
+		860BEFE02E890C4E00492644 /* addword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addword.swift; sourceTree = "<group>"; };
+		860BEFE22E890F7800492644 /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
+		860BEFE82E891CE600492644 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		865215582E86C07800CAB4B2 /* FoundationModels.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FoundationModels.framework; path = System/Library/Frameworks/FoundationModels.framework; sourceTree = SDKROOT; };
+		86A567572E8638CE00699571 /* CourseProgressIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseProgressIntent.swift; sourceTree = "<group>"; };
+		86A567612E868DD400699571 /* VocabularyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VocabularyModel.xcdatamodel; sourceTree = "<group>"; };
+		86A567632E868E9B00699571 /* VocabularyPersistence.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyPersistence.swift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +218,7 @@
 		5A0C77512E5568880002D647 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				865215582E86C07800CAB4B2 /* FoundationModels.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -201,6 +235,8 @@
 		5A615ACC2E5704400080E934 /* Books */ = {
 			isa = PBXGroup;
 			children = (
+				860BEFE22E890F7800492644 /* BookData.swift */,
+				860BEFC92E87D17900492644 /* FavoriteBooksView.swift */,
 				5A615ACD2E57047F0080E934 /* BooksView.swift */,
 				5A615ACF2E576E530080E934 /* BookDetailView.swift */,
 				5ADDD02B2E5792C5004DD8F4 /* PDFReader.swift */,
@@ -232,7 +268,13 @@
 		5A758AC32E7BE4950050F97E /* VocabularyPage */ = {
 			isa = PBXGroup;
 			children = (
+				860BEFDC2E890C1200492644 /* PersonalWordsView */,
+				860BEFDA2E890B8100492644 /* ImportantWordsView.swift */,
+				860BEFD62E89090900492644 /* Vocabularydata.swift */,
+				860BEFD22E88C21A00492644 /* VocabularyManager.swift */,
+				86A567632E868E9B00699571 /* VocabularyPersistence.swift.swift */,
 				5A758AC42E7BE4D80050F97E /* VocabularyView.swift */,
+				86A567602E868DD400699571 /* VocabularyModel.xcdatamodeld */,
 			);
 			path = VocabularyPage;
 			sourceTree = "<group>";
@@ -256,6 +298,8 @@
 		5A758AEA2E7D2AE30050F97E /* LeaningVIew */ = {
 			isa = PBXGroup;
 			children = (
+				860BEFD02E880A3800492644 /* LeaningData.swift */,
+				860BEFCE2E87FDB300492644 /* LeaningYouTubePlayerView.swift */,
 				5A758AEB2E7D2B0E0050F97E /* TopicListView.swift */,
 				5A758AED2E7D2B300050F97E /* TopicDetailView.swift */,
 			);
@@ -274,6 +318,7 @@
 		5A7D6D9A2E7B4F0900703166 /* EnglishCourse */ = {
 			isa = PBXGroup;
 			children = (
+				86A567562E8638BF00699571 /* Siri */,
 				5A758ACA2E7CC0140050F97E /* VIewModel */,
 				5A7D6D9B2E7B4F3000703166 /* EnglishCoursePage.swift */,
 				5A7D6D9D2E7B7BEA00703166 /* EnrolledCourse.swift */,
@@ -287,17 +332,10 @@
 		5A7D6D9F2E7B7C3900703166 /* NotificationManager */ = {
 			isa = PBXGroup;
 			children = (
-				5A7D6DA02E7B7C5600703166 /* EnglishCouseNotification */,
-			);
-			path = NotificationManager;
-			sourceTree = "<group>";
-		};
-		5A7D6DA02E7B7C5600703166 /* EnglishCouseNotification */ = {
-			isa = PBXGroup;
-			children = (
+				860BEFE82E891CE600492644 /* NotificationView.swift */,
 				5A7D6DA12E7B7C8400703166 /* NotificationManager.swift */,
 			);
-			path = EnglishCouseNotification;
+			path = NotificationManager;
 			sourceTree = "<group>";
 		};
 		5A8540652E54A85000B55456 /* Global_Components */ = {
@@ -356,7 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				5ACE31EF2E564D11005232DA /* PINEntryView.swift */,
-				5ACE31F12E564DF0005232DA /* LockManager.swift */,
+				5ACE31F12E564DF0005232DA /*    .swift */,
 			);
 			path = PINFACEID;
 			sourceTree = "<group>";
@@ -433,6 +471,7 @@
 		5AF988FB2E45D7140087A78F /* User_Interface */ = {
 			isa = PBXGroup;
 			children = (
+				860BEFCB2E87DC5300492644 /* ComingSoon */,
 				5A7C94672E7D6D2600377011 /* IIntroPage */,
 				5A758AEA2E7D2AE30050F97E /* LeaningVIew */,
 				5A758AC32E7BE4950050F97E /* VocabularyPage */,
@@ -446,6 +485,41 @@
 				5A7C946E2E7DB2F500377011 /* SplashScreen.swift */,
 			);
 			path = User_Interface;
+			sourceTree = "<group>";
+		};
+		860BEFCB2E87DC5300492644 /* ComingSoon */ = {
+			isa = PBXGroup;
+			children = (
+				860BEFCC2E87DC5B00492644 /* ComingSoonView.swift */,
+			);
+			path = ComingSoon;
+			sourceTree = "<group>";
+		};
+		860BEFDC2E890C1200492644 /* PersonalWordsView */ = {
+			isa = PBXGroup;
+			children = (
+				860BEFDD2E890C2100492644 /* PersonalWordsViewComponents */,
+				860BEFD82E89097D00492644 /* PersonalWordView.swift */,
+			);
+			path = PersonalWordsView;
+			sourceTree = "<group>";
+		};
+		860BEFDD2E890C2100492644 /* PersonalWordsViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				860BEFE02E890C4E00492644 /* addword.swift */,
+				860BEFDE2E890C3D00492644 /* wordCard.swift */,
+			);
+			path = PersonalWordsViewComponents;
+			sourceTree = "<group>";
+		};
+		86A567562E8638BF00699571 /* Siri */ = {
+			isa = PBXGroup;
+			children = (
+				860BEFD42E88C25700492644 /* TodayVocabularyIntent.swift */,
+				86A567572E8638CE00699571 /* CourseProgressIntent.swift */,
+			);
+			path = Siri;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -593,14 +667,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A758ADD2E7CE2430050F97E /* CourseDataModel.xcdatamodeld in Sources */,
+				86A567582E8638D400699571 /* CourseProgressIntent.swift in Sources */,
 				5A719ACF2E4EEB5700298CD0 /* UserModel.swift in Sources */,
 				5A758AC52E7BE4D80050F97E /* VocabularyView.swift in Sources */,
 				5A615ACE2E57047F0080E934 /* BooksView.swift in Sources */,
 				5A76165B2E4C02ED00B7C85A /* Login.swift in Sources */,
 				5AA077D62E528B5900A920D5 /* SubjectCardView.swift in Sources */,
+				860BEFD52E88C25800492644 /* TodayVocabularyIntent.swift in Sources */,
 				5AA077D02E528A3700A920D5 /* CoursesSectionView.swift in Sources */,
 				5A758AD52E7CCF3F0050F97E /* EnglishCouseMode.swift in Sources */,
 				5AA077E22E528D9200A920D5 /* ToolModel.swift in Sources */,
+				860BEFD12E880A3D00492644 /* LeaningData.swift in Sources */,
 				5A7C946F2E7DB2F500377011 /* SplashScreen.swift in Sources */,
 				5AA077DC2E528BAE00A920D5 /* BottomNavigationView.swift in Sources */,
 				5A615AD02E576E530080E934 /* BookDetailView.swift in Sources */,
@@ -608,6 +685,7 @@
 				5A85406B2E54AD4600B55456 /* VideoPlayer.swift in Sources */,
 				5AA077DA2E528B8E00A920D5 /* ToolCardView.swift in Sources */,
 				5A8540642E54A49A00B55456 /* MainTabNavigationView.swift in Sources */,
+				860BEFD32E88C22000492644 /* VocabularyManager.swift in Sources */,
 				5A758ADF2E7CE43B0050F97E /* PersistenceController.swift in Sources */,
 				5A758AD82E7CD2400050F97E /* PraklyneModel.xcdatamodeld in Sources */,
 				5A719AD22E4EEB7500298CD0 /* FirebaseManager.swift in Sources */,
@@ -616,9 +694,15 @@
 				5A7C94692E7D6DE600377011 /* OnboardingManager.swift in Sources */,
 				5AA077D22E528AD200A920D5 /* CourseCardView.swift in Sources */,
 				5A758AC92E7C690E0050F97E /* EnglishCourseIntro.swift in Sources */,
-				5ACE31F22E564DF0005232DA /* LockManager.swift in Sources */,
+				860BEFDB2E890B8300492644 /* ImportantWordsView.swift in Sources */,
+				860BEFE92E891CED00492644 /* NotificationView.swift in Sources */,
+				860BEFDF2E890C4300492644 /* wordCard.swift in Sources */,
+				860BEFD92E89098300492644 /* PersonalWordView.swift in Sources */,
+				5ACE31F22E564DF0005232DA /*    .swift in Sources */,
 				5A758AC72E7C02240050F97E /* CourseVideoView.swift in Sources */,
+				860BEFE12E890C5200492644 /* addword.swift in Sources */,
 				5A7C946D2E7DA51800377011 /* Profile.swift in Sources */,
+				86A567642E868E9D00699571 /* VocabularyPersistence.swift.swift in Sources */,
 				5A7D6D9E2E7B7BEA00703166 /* EnrolledCourse.swift in Sources */,
 				5AA077E42E53E14400A920D5 /* VideoShortsView.swift in Sources */,
 				5A719ACC2E4EEAC300298CD0 /* Homepage.swift in Sources */,
@@ -629,15 +713,21 @@
 				5ACE31E62E5614D0005232DA /* SettingsView.swift in Sources */,
 				5ADDD02C2E5792C5004DD8F4 /* PDFReader.swift in Sources */,
 				5ACE31F02E564D11005232DA /* PINEntryView.swift in Sources */,
+				860BEFE32E890F7B00492644 /* BookData.swift in Sources */,
 				5A8540672E54AAA500B55456 /* VideoDatModel.swift in Sources */,
 				5AA077D42E528B3A00A920D5 /* SubjectsSectionView.swift in Sources */,
 				5A7C946B2E7D6E1200377011 /* OnboardingView.swift in Sources */,
+				860BEFD72E89091700492644 /* Vocabularydata.swift in Sources */,
+				86A567622E868DD400699571 /* VocabularyModel.xcdatamodeld in Sources */,
+				860BEFCF2E87FDBB00492644 /* LeaningYouTubePlayerView.swift in Sources */,
 				5A758AEE2E7D2B300050F97E /* TopicDetailView.swift in Sources */,
+				860BEFCA2E87D17B00492644 /* FavoriteBooksView.swift in Sources */,
 				5A758AEC2E7D2B0E0050F97E /* TopicListView.swift in Sources */,
 				5A7D6DA22E7B7C8400703166 /* NotificationManager.swift in Sources */,
 				5A85406D2E54AD6800B55456 /* VideoSwipeControls.swift in Sources */,
 				5A7D6D9C2E7B4F3000703166 /* EnglishCoursePage.swift in Sources */,
 				5A85406F2E54ADB000B55456 /* VideoOverlay.swift in Sources */,
+				860BEFCD2E87DC6200492644 /* ComingSoonView.swift in Sources */,
 				5AA077DE2E528D2F00A920D5 /* CoursesModel.swift in Sources */,
 				5ACE31F42E5651E5005232DA /* RootView.swift in Sources */,
 				5A758AE52E7CE4A10050F97E /* DocumentaryVideo.swift in Sources */,
@@ -803,11 +893,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Praklyne/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Used to sign in with Apple ID.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = " Use Face ID to quickly and securely access your app ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -833,11 +926,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Praklyne/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Used to sign in with Apple ID.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = " Use Face ID to quickly and securely access your app ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1044,6 +1140,16 @@
 			);
 			currentVersion = 5AF988D82E45D6F70087A78F /* Praklyne.xcdatamodel */;
 			path = Praklyne.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		86A567602E868DD400699571 /* VocabularyModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				86A567612E868DD400699571 /* VocabularyModel.xcdatamodel */,
+			);
+			currentVersion = 86A567612E868DD400699571 /* VocabularyModel.xcdatamodel */;
+			path = VocabularyModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

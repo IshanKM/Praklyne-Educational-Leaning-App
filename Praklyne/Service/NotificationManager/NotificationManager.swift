@@ -73,4 +73,58 @@ class NotificationManager {
             }
         }
     }
+    
+    
+    func scheduleDailyVocabularyNotifications(words: [VocabularyWord], testMode: Bool = true) {
+       
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["daily-vocab-1", "daily-vocab-2", "daily-vocab-3"])
+        
+        let currentIndex = UserDefaults.standard.integer(forKey: "vocabNotificationIndex")
+        guard !words.isEmpty else { return }
+
+
+        let countToSchedule = testMode ? min(5, words.count) : 1
+        
+        for i in 0..<countToSchedule {
+            let wordIndex = (currentIndex + i) % words.count
+            let word = words[wordIndex]
+            
+            let content = UNMutableNotificationContent()
+            content.title = "Daily Word 📚"
+            content.body = "\(word.english) → \(word.sinhala)"
+            content.sound = .default
+            
+            let trigger: UNNotificationTrigger
+            if testMode {
+              
+                trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(10 * (i + 1)), repeats: false)
+            } else {
+              
+                var dateComponents = DateComponents()
+                dateComponents.hour = 9
+                dateComponents.minute = 0
+                trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            }
+            
+            let request = UNNotificationRequest(
+                identifier: "daily-vocab-\(word.id)",
+                content: content,
+                trigger: trigger
+            )
+            
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print("❌ Vocab notification error: \(error.localizedDescription)")
+                } else {
+                    print("✅ Vocab scheduled: \(word.english) (in testMode: \(testMode))")
+                }
+            }
+        }
+        
+      
+        let nextIndex = (currentIndex + countToSchedule) % words.count
+        UserDefaults.standard.set(nextIndex, forKey: "vocabNotificationIndex")
+    }
+
+
 }

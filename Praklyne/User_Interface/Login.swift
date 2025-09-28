@@ -12,14 +12,7 @@ struct LoginView: View {
  
             VStack(spacing: 0) {
                 VStack(spacing: 16) {
-                    HStack {
-                        Spacer()
-                        Text("9:41")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundColor(colorScheme == .dark ? .white : .black)
-                        Spacer()
-                    }
-                    .padding(.top, 8)
+  
                     
                     Image("praklyne_banner")
                         .resizable()
@@ -41,19 +34,19 @@ struct LoginView: View {
                 
                 Spacer()
             }
-            .ignoresSafeArea()
+            
             
          
             VStack {
                 Spacer()
                     .frame(height: 280)
                 
-                VStack(spacing: 24) {
+                VStack(spacing: 20) {
              
                     Image("main_logo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 200, height: 80)
+                        .frame(width: 300, height: 80)
                         .clipShape(Circle())
                         .padding(.top, 30)
                     
@@ -63,11 +56,15 @@ struct LoginView: View {
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(colorScheme == .dark ? .white : .black)
                         
-                        Text("BoostEnGuide is your path to English fluency in one month. Learn with documentaries and track vocabulary, and practice speaking and writing with AI-powered tools. Start improving your English skills today!")
+                        Text("Praklyne helps you master multiple subjects and languages with short videos, images, and AI-powered practice. Learn faster, stay engaged, and track your progress all in one place.")
                             .font(.system(size: 14, weight: .regular))
                             .foregroundColor(.gray)
                             .multilineTextAlignment(.center)
                             .lineSpacing(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.horizontal, 20)
+
+
                     }
                     .padding(.horizontal, 20)
                     
