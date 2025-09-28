@@ -12,33 +12,25 @@ struct PDFReaderView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-       
+        
             HStack {
                 Button(action: { dismiss() }) {
-                    Image(systemName: "arrow.left")
-                        .font(.title2)
-                        .foregroundColor(.blue)
+                    Image(systemName: "arrow.left").font(.title2).foregroundColor(.blue)
                 }
-                
                 Spacer()
-                
-                Text("\(currentPage)/\(totalPages)")
-                    .font(.subheadline)
-                    .foregroundColor(.black)
-                
+                Text("\(currentPage)/\(totalPages)").font(.subheadline).foregroundColor(.black)
                 Spacer()
-                
                 Color.clear.frame(width: 24)
             }
             .padding(.horizontal)
             .padding(.vertical, 8)
             .background(Color(UIColor.systemBackground))
             
-       
+        
             PDFKitView(pdfView: $pdfView, book: book, progress: $progress, currentPage: $currentPage, totalPages: $totalPages)
                 .edgesIgnoringSafeArea(.all)
         }
-        .ignoresSafeArea(edges: .top) 
+        .ignoresSafeArea(edges: .top)
         .onAppear {
             if let document = pdfView.document {
                 totalPages = document.pageCount
@@ -52,7 +44,6 @@ struct PDFReaderView: View {
         }
     }
 }
-
 
 struct PDFKitView: UIViewRepresentable {
     @Binding var pdfView: PDFView
@@ -68,7 +59,7 @@ struct PDFKitView: UIViewRepresentable {
             view.document = document
             view.autoScales = true
             totalPages = document.pageCount
-           
+            
             NotificationCenter.default.addObserver(context.coordinator,
                                                    selector: #selector(Coordinator.pageChanged),
                                                    name: Notification.Name.PDFViewPageChanged,
@@ -103,24 +94,12 @@ struct PDFKitView: UIViewRepresentable {
 }
 
 struct PDFReaderView_Previews: PreviewProvider {
-    @State static var progress: Double = 0.3
+    @State static var progress: Double = 0.0
     
     static var previews: some View {
-        NavigationStack {
-            PDFReaderView(
-                book: Book(
-                    title: "A Day of Fallen Night",
-                    author: "Samantha Shannon",
-                    category: "Fantasy",
-                    rating: 4.2,
-                    pages: 250,
-                    coverImage: "book_fallen_night",
-                    pdfFileName: "example_book",
-                    readingProgress: 0.3,
-                    description: "An epic standalone prequel with dragons, ancient magic, and warring kingdoms."
-                ),
-                progress: $progress
-            )
-        }
+        PDFReaderView(
+            book: Book.sampleBooks[0],
+            progress: $progress
+        )
     }
 }

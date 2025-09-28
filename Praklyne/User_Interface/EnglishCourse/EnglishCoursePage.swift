@@ -82,167 +82,158 @@ class CourseDataStore: ObservableObject {
 
 struct CourseProgressView: View {
     @StateObject private var dataStore = CourseDataStore()
-    @State private var showVideoPlayer = false
-    
+    @State private var navigateToVideo = false
+
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack(spacing: 24) {
-                    VStack(alignment: .leading, spacing: 12) {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Practice English in")
-                                    .font(.title2)
-                                    .foregroundColor(.secondary)
-                                Text("  One Month ")
-                                    .font(.largeTitle)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.primary)
-                            }
-                            Spacer()
-                            
-                            ZStack {
-                                Circle()
-                                    .stroke(Color.gray.opacity(0.3), lineWidth: 8)
-                                    .frame(width: 80, height: 80)
-                                
-                                Circle()
-                                    .trim(from: 0, to: CGFloat(dataStore.totalDaysCompleted) / 28.0)
-                                    .stroke(
-                                        LinearGradient(
-                                            colors: [Color.blue, Color.purple],
-                                            startPoint: .topLeading,
-                                            endPoint: .bottomTrailing
-                                        ),
-                                        style: StrokeStyle(lineWidth: 8, lineCap: .round)
-                                    )
-                                    .frame(width: 80, height: 80)
-                                    .rotationEffect(.degrees(-90))
-                                
-                                VStack(spacing: 2) {
-                                    Text("\(Int((Double(dataStore.totalDaysCompleted) / 28.0) * 100))%")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                    Text("Complete")
-                                        .font(.caption2)
-                                        .foregroundColor(.secondary)
-                                }
-                            }
-                        }
-                        
-                        VStack(alignment: .leading, spacing: 8) {
-                            HStack {
-                                Text("Course Progress")
-                                    .font(.subheadline)
-                                    .fontWeight(.medium)
-                                Spacer()
-                                Text("\(dataStore.totalDaysCompleted)/28 days")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                            }
-                            
-                            ProgressView(value: Double(dataStore.totalDaysCompleted), total: 28.0)
-                                .progressViewStyle(LinearProgressViewStyle(tint: Color.blue))
-                                .scaleEffect(x: 1, y: 2, anchor: .center)
-                        }
-                    }
-                    .padding(.horizontal)
-                    
-                    LazyVGrid(columns: [
-                        GridItem(.flexible()),
-                        GridItem(.flexible())
-                    ], spacing: 16) {
-                        ProgressCard(
-                            title: "Days Completed",
-                            value: "\(dataStore.totalDaysCompleted)",
-                            subtitle: "Total days",
-                            color: .blue
-                        )
-                        
-                        ProgressCard(
-                            title: "Current Streak",
-                            value: "\(dataStore.currentStreak)",
-                            subtitle: "Days in a row",
-                            color: .green
-                        )
-                        
-                        ProgressCard(
-                            title: "Hours Spent",
-                            value: String(format: "%.1f", dataStore.totalHoursSpent),
-                            subtitle: "Total hours",
-                            color: .orange
-                        )
-                    }
-                    .padding(.horizontal)
-                    
-                    Button(action: {
-                        showVideoPlayer = true
-                    }) {
-                        HStack {
-                            Image(systemName: "play.circle.fill")
+        ScrollView {
+            VStack(spacing: 24) {
+               
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Practice English in")
                                 .font(.title2)
-                            Text(dataStore.canWatchToday() ? "Continue Learning" : "Come Back Tomorrow")
-                                .font(.headline)
-                                .fontWeight(.semibold)
+                                .foregroundColor(.secondary)
+                            Text("One Month")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .foregroundColor(.primary)
                         }
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(
-                            LinearGradient(
-                                colors: dataStore.canWatchToday() ? [Color.blue, Color.purple] : [Color.gray, Color.gray.opacity(0.8)],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .cornerRadius(12)
-                    }
-                    .padding(.horizontal)
-                    .disabled(!dataStore.canWatchToday())
-                    
-                    if !dataStore.canWatchToday() {
-                        Text("You've already watched a video today! 🎉")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                            .padding(.horizontal)
+                        Spacer()
+                        progressCircle
                     }
                     
-                    VStack(alignment: .leading, spacing: 20) {
-                        Text("4-Week Journey")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .padding(.horizontal)
-                        
-                        ForEach(0..<4, id: \.self) { weekIndex in
-                            WeekProgressView(
-                                weekNumber: weekIndex + 1,
-                                weekProgress: dataStore.weeklyProgress[weekIndex],
-                                isCurrentWeek: getCurrentWeek() == weekIndex,
-                                isCompleted: dataStore.weeklyProgress[weekIndex].allSatisfy { $0 }
-                            )
-                            .padding(.horizontal)
-                        }
-                    }
+                    courseProgressBar
                 }
-                .padding(.vertical)
+                .padding(.horizontal)
+
+                statsGrid
+                continueLearningButton
+                weeklyJourneySection
+
+                NavigationLink(
+                    destination: CourseVideoView(dataStore: dataStore),
+                    isActive: $navigateToVideo
+                ) {
+                    EmptyView()
+                }
             }
-            .navigationTitle("Course Progress")
-            .navigationBarTitleDisplayMode(.inline)
+            .padding(.vertical)
         }
-        .sheet(isPresented: $showVideoPlayer) {
-            CourseVideoView(dataStore: dataStore)
+        .navigationTitle("Course Progress")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private var progressCircle: some View {
+        ZStack {
+            Circle()
+                .stroke(Color.gray.opacity(0.3), lineWidth: 8)
+                .frame(width: 80, height: 80)
+            Circle()
+                .trim(from: 0, to: CGFloat(dataStore.totalDaysCompleted) / 28.0)
+                .stroke(
+                    LinearGradient(colors: [Color.blue, Color.purple], startPoint: .topLeading, endPoint: .bottomTrailing),
+                    style: StrokeStyle(lineWidth: 8, lineCap: .round)
+                )
+                .frame(width: 80, height: 80)
+                .rotationEffect(.degrees(-90))
+            VStack(spacing: 2) {
+                Text("\(Int((Double(dataStore.totalDaysCompleted)/28.0)*100))%")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                Text("Complete")
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+            }
+        }
+    }
+    
+    private var courseProgressBar: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Text("Course Progress")
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                Spacer()
+                Text("\(dataStore.totalDaysCompleted)/28 days")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            
+            ProgressView(value: Double(dataStore.totalDaysCompleted), total: 28.0)
+                .progressViewStyle(LinearProgressViewStyle(tint: Color.blue))
+                .scaleEffect(x: 1, y: 2, anchor: .center)
+        }
+    }
+    
+    private var statsGrid: some View {
+        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+            ProgressCard(title: "Days Completed", value: "\(dataStore.totalDaysCompleted)", subtitle: "Total days", color: .blue)
+            ProgressCard(title: "Current Streak", value: "\(dataStore.currentStreak)", subtitle: "Days in a row", color: .green)
+            ProgressCard(title: "Hours Spent", value: String(format: "%.1f", dataStore.totalHoursSpent), subtitle: "Total hours", color: .orange)
+        }
+        .padding(.horizontal)
+    }
+    
+    private var continueLearningButton: some View {
+        VStack(spacing: 8) {
+            Button(action: { navigateToVideo = true }) {   // changed to push page
+                HStack {
+                    Image(systemName: "play.circle.fill")
+                        .font(.title2)
+                    Text(dataStore.canWatchToday() ? "Continue Learning" : "Come Back Tomorrow")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                }
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(
+                    LinearGradient(
+                        colors: dataStore.canWatchToday() ? [Color.blue, Color.purple] : [Color.gray, Color.gray.opacity(0.8)],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                )
+                .cornerRadius(12)
+            }
+            .disabled(!dataStore.canWatchToday())
+            
+            if !dataStore.canWatchToday() {
+                Text("You've already watched a video today! 🎉")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .padding(.horizontal)
+            }
+        }
+        .padding(.horizontal)
+    }
+    
+    private var weeklyJourneySection: some View {
+        VStack(alignment: .leading, spacing: 20) {
+            Text("4-Week Journey")
+                .font(.headline)
+                .fontWeight(.semibold)
+                .padding(.horizontal)
+            
+            ForEach(0..<4, id: \.self) { weekIndex in
+                WeekProgressView(
+                    weekNumber: weekIndex + 1,
+                    weekProgress: dataStore.weeklyProgress[weekIndex],
+                    isCurrentWeek: getCurrentWeek() == weekIndex,
+                    isCompleted: dataStore.weeklyProgress[weekIndex].allSatisfy { $0 }
+                )
+                .padding(.horizontal)
+            }
         }
     }
     
     private func getCurrentWeek() -> Int {
-        return min(dataStore.totalDaysCompleted / 7, 3)
-    }
-    
-    private func dayName(for index: Int) -> String {
-        let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-        return days[index]
+        min(dataStore.totalDaysCompleted / 7, 3)
     }
 }
+
+
 
 struct ProgressCard: View {
     let title: String
@@ -261,12 +252,10 @@ struct ProgressCard: View {
                     .fill(color)
                     .frame(width: 8, height: 8)
             }
-            
             Text(value)
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.primary)
-            
             Text(subtitle)
                 .font(.caption)
                 .foregroundColor(.secondary)
@@ -276,6 +265,7 @@ struct ProgressCard: View {
         .cornerRadius(12)
     }
 }
+
 
 struct WeekProgressView: View {
     let weekNumber: Int
@@ -290,15 +280,12 @@ struct WeekProgressView: View {
                     Image(systemName: isCompleted ? "checkmark.circle.fill" : "circle")
                         .foregroundColor(isCompleted ? .green : .gray)
                         .font(.title3)
-                    
                     Text("Week \(weekNumber)")
                         .font(.headline)
                         .fontWeight(.semibold)
                         .foregroundColor(isCurrentWeek ? .primary : .secondary)
                 }
-                
                 Spacer()
-                
                 if isCurrentWeek {
                     Text("Current")
                         .font(.caption)
@@ -317,12 +304,10 @@ struct WeekProgressView: View {
                         Text(dayName(for: dayIndex))
                             .font(.caption2)
                             .foregroundColor(.secondary)
-                        
                         RoundedRectangle(cornerRadius: 6)
                             .fill(weekProgress[dayIndex] ?
                                   LinearGradient(colors: [.green, .mint], startPoint: .topLeading, endPoint: .bottomTrailing) :
-                                  LinearGradient(colors: [.gray.opacity(0.3)], startPoint: .topLeading, endPoint: .bottomTrailing)
-                            )
+                                  LinearGradient(colors: [.gray.opacity(0.3)], startPoint: .topLeading, endPoint: .bottomTrailing))
                             .frame(width: 28, height: 28)
                             .overlay(
                                 Image(systemName: weekProgress[dayIndex] ? "checkmark" : "")
@@ -347,19 +332,18 @@ struct WeekProgressView: View {
             RoundedRectangle(cornerRadius: 16)
                 .stroke(isCurrentWeek ? Color.blue.opacity(0.3) : Color.clear, lineWidth: 1)
         )
-
     }
     
     private func dayName(for index: Int) -> String {
-        let days = ["S", "M", "T", "W", "T", "F", "S"]
-        return days[index]
+        ["S", "M", "T", "W", "T", "F", "S"][index]
     }
 }
 
 
-
 struct CourseProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseProgressView()
+        NavigationView {
+            CourseProgressView()
+        }
     }
 }

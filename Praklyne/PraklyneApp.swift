@@ -1,11 +1,15 @@
 import SwiftUI
 import FirebaseCore
+import CoreData
 import GoogleSignIn
 import UserNotifications
 import AppIntents
 
 @main
 struct PraklyneApp: App {
+    
+    let vocabPersistenceController = VocabularyPersistenceController.shared
+    
     init() {
         FirebaseApp.configure()
         requestNotificationPermission()
@@ -15,6 +19,8 @@ struct PraklyneApp: App {
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
+                
+                .environment(\.managedObjectContext, vocabPersistenceController.container.viewContext)
                 .onOpenURL { url in
                     GIDSignIn.sharedInstance.handle(url)
                 }

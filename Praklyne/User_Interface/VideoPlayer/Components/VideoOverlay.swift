@@ -2,7 +2,6 @@ import SwiftUI
 
 struct VideoOverlay: View {
     let video: VideoData
-    @Binding var isBookmarked: Bool
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -16,12 +15,11 @@ struct VideoOverlay: View {
                         .foregroundColor(.gray)
                         .font(.footnote)
                 }
+                .padding(10)
+                .background(Color.black.opacity(0.5))
+                .cornerRadius(8)
+                
                 Spacer()
-                Button { isBookmarked.toggle() } label: {
-                    Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
-                        .font(.title2)
-                        .foregroundColor(.white)
-                }
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 85)

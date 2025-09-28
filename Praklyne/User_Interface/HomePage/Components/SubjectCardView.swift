@@ -2,12 +2,13 @@ import SwiftUI
 
 struct SubjectCardView: View {
     let subject: Subject
-    @State private var showTopics = false
     
     var body: some View {
-        Button(action: {
-            showTopics = true
-        }) {
+        NavigationLink(
+            destination: TopicsListView(
+                learningSubject: LearningSubject(id: subject.id, name: subject.name, color: subject.color)
+            )
+        ) {
             VStack(spacing: 8) {
                 Image(systemName: subject.icon)
                     .font(.title2)
@@ -23,8 +24,6 @@ struct SubjectCardView: View {
                     .multilineTextAlignment(.center)
             }
         }
-        .sheet(isPresented: $showTopics) {
-            TopicsListView(subject: subject)
-        }
     }
 }
+

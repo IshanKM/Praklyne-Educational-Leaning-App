@@ -2,42 +2,38 @@ import SwiftUI
 
 struct BookDetailView: View {
     @State var book: Book
-    @State private var isFavorite = false
-    @State private var showReviews = false
+    var onUpdate: (Book) -> Void
+    @State private var isFavorite: Bool = false
     @State private var showPDFReader = false
     @State private var readingProgress: Double = 0.0
-
+    
     @Environment(\.dismiss) var dismiss
-
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
+               
                 HStack {
-                    Button(action: {
-                        dismiss()
-                    }) {
+                    Button(action: { dismiss() }) {
                         Image(systemName: "arrow.left")
                             .font(.system(size: 20))
                             .foregroundColor(.black)
                     }
-                    
                     Spacer()
-                    
                     VStack(spacing: 4) {
                         Text(book.title)
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundColor(.black)
                             .lineLimit(1)
-                        
                         Text(book.author)
                             .font(.system(size: 14))
                             .foregroundColor(.gray)
                     }
-                    
                     Spacer()
-                    
                     Button(action: {
                         isFavorite.toggle()
+                        book.isFavorite = isFavorite
+                        onUpdate(book)
                     }) {
                         Image(systemName: isFavorite ? "heart.fill" : "heart")
                             .font(.system(size: 18, weight: .bold))
@@ -50,7 +46,7 @@ struct BookDetailView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 10)
                 
-          
+           
                 Image(book.coverImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -61,7 +57,6 @@ struct BookDetailView: View {
                 
             
                 HStack(spacing: 20) {
-              
                     HStack(spacing: 4) {
                         Image(systemName: "star.fill")
                             .foregroundColor(.orange)
@@ -70,8 +65,6 @@ struct BookDetailView: View {
                             .font(.system(size: 16, weight: .medium))
                             .foregroundColor(.black)
                     }
-                    
-                 
                     Text(book.category)
                         .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.white)
@@ -79,13 +72,9 @@ struct BookDetailView: View {
                         .padding(.vertical, 6)
                         .background(Color.orange)
                         .cornerRadius(15)
-                    
-                    
                     Text("\(book.pages) pages")
                         .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.black)
-                    
-                    
                     if book.readingProgress > 0 {
                         Text("\(Int(book.readingProgress * 100))% Read")
                             .font(.system(size: 14, weight: .medium))
@@ -94,12 +83,11 @@ struct BookDetailView: View {
                 }
                 .padding(.top, 25)
                 
-                
+                // Summary
                 VStack(alignment: .leading, spacing: 16) {
                     Text("Summary")
                         .font(.system(size: 20, weight: .bold))
                         .foregroundColor(.black)
-                    
                     Text(book.description)
                         .font(.system(size: 14))
                         .foregroundColor(.black)
@@ -109,11 +97,9 @@ struct BookDetailView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 30)
                 
-               
+           
                 HStack(spacing: 16) {
-                    Button(action: {
-                        showReviews = true
-                    }) {
+                    Button(action: { }) {
                         Image(systemName: "star.fill")
                             .font(.system(size: 24))
                             .foregroundColor(.orange)
@@ -138,9 +124,9 @@ struct BookDetailView: View {
                         PDFReaderView(book: book, progress: $readingProgress)
                             .onDisappear {
                                 book.readingProgress = readingProgress
+                                onUpdate(book)   // save progress
                             }
                     }
-
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 30)
@@ -149,8 +135,8 @@ struct BookDetailView: View {
         }
         .background(Color.white)
         .navigationBarHidden(true)
-        .sheet(isPresented: $showReviews) {
-         
+        .onAppear {
+            isFavorite = book.isFavorite
         }
     }
 }
@@ -158,6 +144,6 @@ struct BookDetailView: View {
 
 struct BookDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        BookDetailView(book: Book.sampleBooks[0])
+        BookDetailView(book: Book.sampleBooks[0], onUpdate: { _ in })
     }
 }

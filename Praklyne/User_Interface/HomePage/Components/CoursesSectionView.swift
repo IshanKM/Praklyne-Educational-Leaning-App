@@ -19,43 +19,48 @@ struct CoursesSectionView: View {
     @State private var navigateToProgress = false
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 16) {
-                ForEach(courses, id: \.id) { course in
-                    NavigationLink(
-                        destination: UserDefaults.standard.bool(forKey: "hasSeenIntro")
-                            ? AnyView(CourseProgressView())
-                            : AnyView(CourseIntroView()
-                                .onDisappear {
-                                    UserDefaults.standard.set(true, forKey: "hasSeenIntro")
-                                }
-                            ),
-                        isActive: UserDefaults.standard.bool(forKey: "hasSeenIntro")
-                            ? $navigateToProgress
-                            : $navigateToIntro
-                    ) {
-                        CourseCardView(
-                            course: course,
-                            enrolledCourse: $enrolledCourse,
-                            navigateToIntro: $navigateToIntro,
-                            navigateToProgress: $navigateToProgress
-                        )
+        VStack(alignment: .leading) {
+           
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                    ForEach(courses, id: \.id) { course in
+                        NavigationLink(
+                            destination: UserDefaults.standard.bool(forKey: "hasSeenIntro")
+                                ? AnyView(CourseProgressView())
+                                : AnyView(
+                                    CourseIntroView()
+                                        .onDisappear {
+                                            UserDefaults.standard.set(true, forKey: "hasSeenIntro")
+                                        }
+                                ),
+                            isActive: UserDefaults.standard.bool(forKey: "hasSeenIntro")
+                                ? $navigateToProgress
+                                : $navigateToIntro
+                        ) {
+                            CourseCardView(
+                                course: course,
+                                enrolledCourse: $enrolledCourse,
+                                navigateToIntro: $navigateToIntro,
+                                navigateToProgress: $navigateToProgress
+                            )
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
-                    .buttonStyle(PlainButtonStyle())
                 }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
             }
-            .padding(.horizontal, 16)
+            
+          
+            HStack(spacing: 8) {
+                Circle()
+                    .fill(Color.green)
+                    .frame(width: 8, height: 8)
+            }
+            .frame(maxWidth: .infinity, alignment: .center) 
+            .padding(.top, 10)
+
         }
-        
-        HStack(spacing: 8) {
-            Circle()
-                .fill(Color.green)
-                .frame(width: 8, height: 8)
-            Circle()
-                .fill(Color.gray.opacity(0.3))
-                .frame(width: 8, height: 8)
-        }
-        .padding(.top, 10)
     }
 }
-

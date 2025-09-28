@@ -8,7 +8,6 @@ class LockManager: ObservableObject {
     @Published var faceIDError: String? = nil
     @Published var failedAttempts: Int = 0
     
-
     private var lockTimeout: Date? {
         get {
             if let interval = UserDefaults.standard.value(forKey: "lockTimeout") as? TimeInterval {
@@ -32,24 +31,30 @@ class LockManager: ObservableObject {
     let maxAttempts = 5
     let timeoutSeconds: TimeInterval = 120
     
+    // MARK: - Check Authentication on App Launch
     func autoCheckFaceID() {
+        // If Face ID is NOT enabled, require PIN only if pinEnabled = true
         guard faceIDEnabled else {
-            requiresPIN = true
+            requiresPIN = pinEnabled
+            isLocked = pinEnabled // lock only if PIN is enabled
             return
         }
         
-    
+        // Check lock timeout
         if let timeout = lockTimeout, Date() < timeout {
             faceIDError = "App locked. Try again later."
             requiresPIN = true
+            isLocked = true
             return
         }
         
         let context = LAContext()
         var error: NSError?
         
+        // Check if FaceID is available
         guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
-            requiresPIN = true
+            requiresPIN = pinEnabled
+            isLocked = pinEnabled
             return
         }
         
@@ -63,6 +68,7 @@ class LockManager: ObservableObject {
                 } else {
                     self.failedAttempts += 1
                     self.requiresPIN = true
+                    self.isLocked = true
                     self.faceIDError = "Face ID not recognized. Attempts left: \(self.maxAttempts - self.failedAttempts)"
                     
                     if self.failedAttempts >= self.maxAttempts {
@@ -75,19 +81,17 @@ class LockManager: ObservableObject {
         }
     }
     
-
+    // MARK: - Verify PIN
     func verifyPIN(_ pin: String) -> Bool {
-    
         if let timeout = lockTimeout, Date() < timeout {
             faceIDError = "App is locked. Try again later."
             return false
         }
         
-
-        guard let stored = storedPIN, !stored.isEmpty else {
-            isLocked = false
-            requiresPIN = false
-            return true
+        // If PIN is not enabled or not set, deny automatic unlock
+        guard let stored = storedPIN, !stored.isEmpty, pinEnabled else {
+            faceIDError = "PIN not set. Please set a PIN in settings."
+            return false
         }
 
         if pin == stored {
@@ -109,20 +113,28 @@ class LockManager: ObservableObject {
         }
     }
     
-
+    // MARK: - Save PIN
     func savePIN(_ pin: String) {
         storedPIN = pin
+        pinEnabled = true
         UserDefaults.standard.set(pin, forKey: "appPIN")
+        UserDefaults.standard.set(true, forKey: "pinEnabled")
     }
     
+    // MARK: - Enable / Disable FaceID
     func toggleFaceID(_ enabled: Bool) {
         faceIDEnabled = enabled
         UserDefaults.standard.set(enabled, forKey: "faceIDEnabled")
         if enabled { autoCheckFaceID() }
     }
     
+    // MARK: - Enable / Disable PIN
     func togglePIN(_ enabled: Bool) {
         pinEnabled = enabled
         UserDefaults.standard.set(enabled, forKey: "pinEnabled")
+        if !enabled {
+            storedPIN = nil
+            UserDefaults.standard.removeObject(forKey: "appPIN")
+        }
     }
 }
