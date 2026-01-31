@@ -7,7 +7,7 @@ struct HomeView: View {
     @State private var selectedToolsTab = "English"
     @State private var showAllSubjects = false
     
-    var body: some View {x
+    var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
@@ -18,7 +18,7 @@ struct HomeView: View {
                     
                     SubjectsSectionView(showAll: $showAllSubjects)
                     
-                    //SubjectsSectionView(showAll: $showAllSubjects)
+                    //SubjectsSectionView(showAll : $showAllSubjects)
                     
                     Spacer()
                     

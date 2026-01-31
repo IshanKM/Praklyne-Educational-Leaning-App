@@ -10,21 +10,21 @@ struct VideoShortsView: View {
         ZStack {
             Color.black.ignoresSafeArea()
             
-            if service.videos.isEmpty {
+            if service.shortVideos.isEmpty {
                 ProgressView("Loading...")
                     .foregroundColor(.white)
                     .frame(maxHeight: .infinity, alignment: .center)
                     .padding(.bottom, bottomNavHeight)
             } else {
                 
-                VideoPlayer(videoID: extractVideoID(from: service.videos[currentIndex].youtubeLink))
+                VideoPlayer(videoID: extractVideoID(from: service.shortVideos[currentIndex].youtubeLink))
                     .ignoresSafeArea()
                 
            
                 VStack {
                     HStack {
                         Spacer()
-                        Text(service.videos[currentIndex].title)
+                        Text(service.shortVideos[currentIndex].title)
                             .foregroundColor(.white)
                             .font(.title2.bold())
                             .padding(8)
@@ -45,17 +45,16 @@ struct VideoShortsView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 
-                VideoOverlay(video: service.videos[currentIndex])
+                VideoOverlay(video: service.shortVideos[currentIndex])
             }
         }
         .onAppear {
-            service.fetchVideos()
+            service.fetchShortVideos()
         }
     }
     
     func next() {
-        if currentIndex < service.videos.count - 1 {
-            currentIndex += 1
+        if currentIndex < service.shortVideos.count - 1 {            currentIndex += 1
         }
     }
     
@@ -74,5 +73,12 @@ struct VideoShortsView: View {
             }
         }
         return urlString
+    }
+}
+
+
+struct VideoShortsView_Previews: PreviewProvider {
+    static var previews: some View {
+        VideoShortsView()
     }
 }

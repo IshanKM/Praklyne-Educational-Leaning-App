@@ -1,16 +1,37 @@
 import FirebaseFirestore
 
 class VideoService: ObservableObject {
-    @Published var videos: [VideoData] = []
+    @Published var shortVideos: [VideoData] = []
+    @Published var longVideos: [VideoData] = []
     private let db = Firestore.firestore()
     
-    func fetchVideos() {
-        db.collection("video_list").getDocuments { snapshot, error in
+    // Fetch Short videos only
+    func fetchShortVideos() {
+        db.collection("video_list").whereField("type", isEqualTo: "Short").getDocuments { snapshot, error in
             if let error = error {
                 print("Firestore error: \(error.localizedDescription)")
                 return
             }
-            self.videos = snapshot?.documents.compactMap { doc in
+            self.shortVideos = snapshot?.documents.compactMap { doc in
+                let data = doc.data()
+                return VideoData(
+                    title: data["title"] as? String ?? "",
+                    youtubeLink: data["youtubeId"] as? String ?? "",
+                    category: data["category"] as? String ?? "",
+                    description: data["description"] as? String ?? ""
+                )
+            } ?? []
+        }
+    }
+    
+    // Fetch Long videos only
+    func fetchLongVideos() {
+        db.collection("video_list").whereField("type", isEqualTo: "Long").getDocuments { snapshot, error in
+            if let error = error {
+                print("Firestore error: \(error.localizedDescription)")
+                return
+            }
+            self.longVideos = snapshot?.documents.compactMap { doc in
                 let data = doc.data()
                 return VideoData(
                     title: data["title"] as? String ?? "",
