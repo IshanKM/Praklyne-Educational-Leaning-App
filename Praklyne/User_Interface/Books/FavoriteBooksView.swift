@@ -40,10 +40,15 @@ struct FavoriteBooksView: View {
                                     BookDetailView(book: book, onUpdate: onUpdate)
                                 } label: {
                                     HStack {
-                                        Image(book.coverImage)
-                                            .resizable()
-                                            .frame(width: 60, height: 90)
-                                            .cornerRadius(6)
+                                        AsyncImage(url: URL(string: book.coverImage)) { image in
+                                                        image.resizable().scaledToFill()
+                                                    } placeholder: {
+                                                        RoundedRectangle(cornerRadius: 8)
+                                                            .fill(Color.gray.opacity(0.3))
+                                                    }
+                                                    .frame(width: 60, height: 90)
+                                                    .cornerRadius(8)
+                                                    .clipped()
                                         VStack(alignment: .leading) {
                                             Text(book.title)
                                                 .font(.headline)
