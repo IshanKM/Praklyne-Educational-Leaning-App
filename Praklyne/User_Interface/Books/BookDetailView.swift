@@ -47,13 +47,15 @@ struct BookDetailView: View {
                 .padding(.top, 10)
                 
            
-                Image(book.coverImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 180, height: 270)
-                    .cornerRadius(8)
-                    .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 4)
-                    .padding(.top, 30)
+                AsyncImage(url: URL(string: book.coverImage)) { image in
+                                image.resizable().scaledToFill()
+                            } placeholder: {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color.gray.opacity(0.3))
+                            }
+                            .frame(width: 180, height: 270)
+                            .cornerRadius(8)
+                            .clipped()
                 
             
                 HStack(spacing: 20) {

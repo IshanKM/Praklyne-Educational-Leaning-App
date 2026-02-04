@@ -173,7 +173,15 @@ struct ContinueReadingCard: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            Image(book.coverImage).resizable().scaledToFit().frame(width: 100, height: 140).cornerRadius(10).shadow(radius: 4)
+            AsyncImage(url: URL(string: book.coverImage)) { image in
+                            image.resizable().scaledToFill()
+                        } placeholder: {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.gray.opacity(0.3))
+                        }
+                        .frame(width: 100, height: 140)
+                        .cornerRadius(8)
+                        .clipped()
             
             VStack(alignment: .leading, spacing: 10) {
                 Text(book.title).font(.headline).fontWeight(.semibold).foregroundColor(.black).lineLimit(2)
@@ -215,7 +223,15 @@ struct BookCard: View {
     @State private var showDetail = false
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Image(book.coverImage).resizable().scaledToFit().frame(width: 140, height: 200).cornerRadius(20).shadow(radius: 5)
+            AsyncImage(url: URL(string: book.coverImage)) { image in
+                            image.resizable().scaledToFill()
+                        } placeholder: {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.gray.opacity(0.3))
+                        }
+                        .frame(width: 140, height: 200)
+                        .cornerRadius(8)
+                        .clipped()
             
             VStack(alignment: .leading, spacing: 6) {
                 Text(book.title).font(.headline).fontWeight(.semibold).foregroundColor(.black).lineLimit(2)
