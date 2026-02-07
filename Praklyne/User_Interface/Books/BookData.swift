@@ -15,6 +15,7 @@ struct Book: Identifiable, Equatable, Codable {
 }
 
 
+
 extension Book {
     static let sampleBooks: [Book] = [
         Book(id: UUID(), title: "A Day of Fallen Night",
@@ -117,4 +118,5 @@ extension Book {
              description: "Wisdom from the great thinkers of ancient times, guiding modern life.")
     ]
 }
+
 
