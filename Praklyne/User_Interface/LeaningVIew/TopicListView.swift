@@ -171,3 +171,18 @@ struct LearningYouTubeVideoPlayer: UIViewRepresentable {
         uiView.loadHTMLString(html, baseURL: nil)
     }
 }
+
+
+struct TopicsListView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            TopicsListView(
+                learningSubject: LearningSubject(
+                    id: 1,
+                    name: "Science",
+                    color: .blue
+                )
+            )
+        }
+    }
+}
