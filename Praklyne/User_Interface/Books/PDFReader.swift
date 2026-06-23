@@ -14,6 +14,8 @@ struct PDFReaderView: View {
         VStack(spacing: 0) {
 
             // MARK: - Top Bar
+            // The background uses .ignoresSafeArea(edges: .top) so it fills
+            // the status bar / Dynamic Island area — eliminating the white gap
             HStack {
                 Button(action: { dismiss() }) {
                     Image(systemName: "arrow.left")
@@ -32,7 +34,10 @@ struct PDFReaderView: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 8)
-            .background(Color(UIColor.systemBackground))
+            .background(
+                Color(UIColor.systemBackground)
+                    .ignoresSafeArea(edges: .top)   // ← KEY FIX: fills into status bar area
+            )
 
             // MARK: - PDF
             PDFKitView(
@@ -111,9 +116,10 @@ struct PDFKitView: UIViewRepresentable {
         }
     }
 }
+
 struct PDFReaderView_Previews: PreviewProvider {
     @State static var progress: Double = 0.0
-    
+
     static var previews: some View {
         PDFReaderView(
             book: Book.sampleBooks[0],

@@ -2,6 +2,33 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>youtube.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+			<key>googlevideo.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+			<key>ytimg.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 	<key>BUNDLE_ID</key>
 	<string>IshanKM.Praklyne</string>
 	<key>CFBundleURLTypes</key>
@@ -25,9 +52,5 @@
 	<string>praklyne</string>
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.756028124724-rk5gbi1m7a97iool8pc9pmthrb6dcrn6</string>
-    
-    <key>NSSiriUsageDescription</key>
-    <string>This app uses Siri to answer course progress questions.</string>
-    
 </dict>
 </plist>

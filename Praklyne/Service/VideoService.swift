@@ -6,7 +6,7 @@ class VideoService: ObservableObject {
     private let db = Firestore.firestore()
     
     // Fetch Short videos only
-    func fetchShortVideos() {
+    func fetchShortVideos(onComplete: (() -> Void)? = nil) {
         db.collection("video_list").whereField("type", isEqualTo: "Short").getDocuments { snapshot, error in
             if let error = error {
                 print("Firestore error: \(error.localizedDescription)")
@@ -21,6 +21,9 @@ class VideoService: ObservableObject {
                     description: data["description"] as? String ?? ""
                 )
             } ?? []
+            DispatchQueue.main.async {
+                onComplete?()
+            }
         }
     }
     

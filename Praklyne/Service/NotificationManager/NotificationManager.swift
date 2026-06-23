@@ -1,6 +1,90 @@
 import Foundation
 import UserNotifications
 
+// MARK: - Notification Item Model
+struct NotificationItem: Identifiable, Codable {
+    let id: UUID
+    let title: String
+    let body: String
+    let date: Date
+    var isRead: Bool
+}
+
+// MARK: - Notification History Store (Local Inbox)
+class NotificationHistoryStore: ObservableObject {
+    static let shared = NotificationHistoryStore()
+    
+    @Published var items: [NotificationItem] = []
+    
+    private init() {
+        loadFromUserDefaults()
+    }
+    
+    func loadFromUserDefaults() {
+        if let data = UserDefaults.standard.data(forKey: "notification_history_inbox"),
+           let decoded = try? JSONDecoder().decode([NotificationItem].self, from: data) {
+            self.items = decoded.sorted(by: { $0.date > $1.date })
+        }
+    }
+    
+    private func saveToUserDefaults() {
+        if let data = try? JSONEncoder().encode(items) {
+            UserDefaults.standard.set(data, forKey: "notification_history_inbox")
+        }
+    }
+    
+    func addNotification(title: String, body: String, date: Date) {
+        // Prevent duplicate entries of the same notification content delivered around the same time (within 5 seconds)
+        let isDuplicate = items.contains { item in
+            item.title == title && item.body == body && abs(item.date.timeIntervalSince(date)) < 5
+        }
+        guard !isDuplicate else { return }
+        
+        let newItem = NotificationItem(id: UUID(), title: title, body: body, date: date, isRead: false)
+        DispatchQueue.main.async {
+            self.items.insert(newItem, at: 0)
+            self.saveToUserDefaults()
+        }
+    }
+    
+    func syncWithSystemDeliveredNotifications() {
+        UNUserNotificationCenter.current().getDeliveredNotifications { [weak self] notifications in
+            guard let self = self else { return }
+            for notification in notifications {
+                let title = notification.request.content.title
+                let body = notification.request.content.body
+                let date = notification.date
+                self.addNotification(title: title, body: body, date: date)
+            }
+            // Trigger UI update on main thread
+            DispatchQueue.main.async {
+                self.loadFromUserDefaults()
+            }
+        }
+    }
+    
+    func markAllAsRead() {
+        for index in 0..<items.count {
+            items[index].isRead = true
+        }
+        saveToUserDefaults()
+        objectWillChange.send()
+    }
+    
+    func deleteItem(at offsets: IndexSet) {
+        items.remove(atOffsets: offsets)
+        saveToUserDefaults()
+    }
+    
+    func clearAll() {
+        items = []
+        saveToUserDefaults()
+        // Also clear delivered notifications from iOS notification center
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+    }
+}
+
+// MARK: - Notification Manager
 class NotificationManager {
     static let shared = NotificationManager()
     
@@ -50,6 +134,10 @@ class NotificationManager {
         UNUserNotificationCenter.current().add(request)
     }
     
+    func cancelDailyReminder() {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["daily-reminder"])
+    }
+    
 
     func sendEnrollmentNotification(for courseTitle: String) {
         let content = UNMutableNotificationContent()
@@ -75,7 +163,7 @@ class NotificationManager {
     }
     
     
-    func scheduleDailyVocabularyNotifications(words: [VocabularyWord], testMode: Bool = true) {
+    func scheduleDailyVocabularyNotifications(words: [VocabularyWord], testMode: Bool = false) {
        
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["daily-vocab-1", "daily-vocab-2", "daily-vocab-3"])
         
@@ -125,6 +213,4 @@ class NotificationManager {
         let nextIndex = (currentIndex + countToSchedule) % words.count
         UserDefaults.standard.set(nextIndex, forKey: "vocabNotificationIndex")
     }
-
-
 }

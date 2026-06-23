@@ -44,6 +44,27 @@ class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        let title = notification.request.content.title
+        let body = notification.request.content.body
+        let date = notification.date
+        
+        NotificationHistoryStore.shared.addNotification(title: title, body: body, date: date)
+        
         completionHandler([.banner, .sound, .badge])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        let notification = response.notification
+        let title = notification.request.content.title
+        let body = notification.request.content.body
+        let date = notification.date
+        
+        NotificationHistoryStore.shared.addNotification(title: title, body: body, date: date)
+        
+        completionHandler()
     }
 }

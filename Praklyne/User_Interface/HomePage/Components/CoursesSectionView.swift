@@ -11,20 +11,33 @@ struct CoursesSectionView: View {
             image: "english_course_banner"
         )
     ]
-    
+
     @State private var enrolledCourse: EnrolledCourse? =
         UserDefaults.standard.loadCourse(forKey: "enrolledCourse")
-    
     @State private var navigateToIntro = false
     @State private var navigateToProgress = false
-    
+    @State private var currentPage = 0
+
     var body: some View {
-        VStack(alignment: .leading) {
-           
-            
+        VStack(alignment: .leading, spacing: 10) {
+
+            // MARK: – Section header
+            HStack {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Featured Course")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .foregroundColor(.primary)
+                    Text("Start learning today")
+                        .font(.system(size: 13))
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+            }
+
+            // MARK: – Carousel
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 20) {
-                    ForEach(courses, id: \.id) { course in
+                HStack(spacing: 16) {
+                    ForEach(Array(courses.enumerated()), id: \.element.id) { index, course in
                         NavigationLink(
                             destination: UserDefaults.standard.bool(forKey: "hasSeenIntro")
                                 ? AnyView(CourseProgressView())
@@ -48,19 +61,41 @@ struct CoursesSectionView: View {
                         .buttonStyle(PlainButtonStyle())
                     }
                 }
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
+                .padding(.horizontal, 2)
+                .padding(.vertical, 4)
             }
-            
-          
-            HStack(spacing: 8) {
-                Circle()
-                    .fill(Color.green)
-                    .frame(width: 8, height: 8)
-            }
-            .frame(maxWidth: .infinity, alignment: .center) 
-            .padding(.top, 10)
+            .padding(.horizontal, 20)
 
+            // MARK: – Page dots
+            if courses.count > 1 {
+                HStack(spacing: 6) {
+                    ForEach(0..<courses.count, id: \.self) { i in
+                        Capsule()
+                            .fill(i == currentPage
+                                  ? LinearGradient(colors: [Color(hex: "#1A73E8"), Color(hex: "#6C63FF")],
+                                                   startPoint: .leading, endPoint: .trailing)
+                                  : LinearGradient(colors: [Color(.systemFill)],
+                                                   startPoint: .leading, endPoint: .trailing))
+                            .frame(width: i == currentPage ? 18 : 6, height: 6)
+                            .animation(.spring(response: 0.4, dampingFraction: 0.7), value: currentPage)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.top, 4)
+            } else {
+                // Single card – static dot
+                Circle()
+                    .fill(
+                        LinearGradient(
+                            colors: [Color(hex: "#1A73E8"), Color(hex: "#6C63FF")],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .frame(width: 8, height: 8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.top, 4)
+            }
         }
     }
 }

@@ -12,21 +12,21 @@ struct MainTabNavigationView: View {
             ZStack {
                 switch selectedTab {
                 case 0:
-                    HomeView(user: $user)
+                    HomeView(user: $user, selectedTab: $selectedTab)
                 case 1:
-                    ComingSoonView()
+                    SearchView()
                 case 2:
                     VideoShortsView()
                 case 3:
-                    ComingSoonView()
+                    LikedSavedView()          // ← My Library (Liked + Saved videos)
                 case 4:
                     SettingsView(user: $user, lockManager: lockManager)
                 default:
-                    HomeView(user: $user)
+                    HomeView(user: $user, selectedTab: $selectedTab)
                 }
             }
-            
-            // Bottom navigation now always shows except for real fullscreen views
+
+            // Bottom navigation always shows except real fullscreen views
             if !fullScreenActive {
                 BottomNavigationView(selectedTab: $selectedTab)
                     .background(Color.white)

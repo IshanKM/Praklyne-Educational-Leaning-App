@@ -9,11 +9,22 @@ struct WordCard: View {
     var body: some View {
         HStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 8) {
-                HStack {
+                HStack(spacing: 8) {
                     Text(word.english)
                         .font(.headline)
                         .fontWeight(.semibold)
                         .foregroundColor(.primary)
+                    
+                    Button(action: {
+                        let rate = UserDefaults.standard.double(forKey: "speech_rate")
+                        let rateVal = rate > 0 ? rate : 0.5
+                        SpeechManager.shared.speak(word.english, rate: rateVal)
+                    }) {
+                        Image(systemName: "speaker.wave.2.fill")
+                            .font(.system(size: 14))
+                            .foregroundColor(.orange)
+                    }
+                    .buttonStyle(.plain)
                     
                     Spacer()
                     
