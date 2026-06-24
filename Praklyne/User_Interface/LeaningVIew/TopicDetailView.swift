@@ -417,12 +417,60 @@ struct SummaryCard: View {
     }
 }
 
+// MARK: - Custom Async Image (Bypasses Wikipedia 403 blocks)
+enum CustomAsyncImagePhase {
+    case empty
+    case success(Image)
+    case failure(Error)
+}
+
+struct CustomAsyncImage<Content: View>: View {
+    let url: URL?
+    @ViewBuilder let content: (CustomAsyncImagePhase) -> Content
+
+    @State private var phase: CustomAsyncImagePhase = .empty
+
+    var body: some View {
+        content(phase)
+            .task(id: url) {
+                await loadImage()
+            }
+    }
+
+    private func loadImage() async {
+        guard let url = url else {
+            phase = .failure(URLError(.badURL))
+            return
+        }
+        phase = .empty
+
+        var request = URLRequest(url: url)
+        // Add educational User-Agent header to satisfy Wikipedia Commons server security policies
+        request.setValue("PraklyneLearningApp/1.0 (contact@praklyne.edu; educational demo)", forHTTPHeaderField: "User-Agent")
+
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                phase = .failure(URLError(.badServerResponse))
+                return
+            }
+            if let uiImage = UIImage(data: data) {
+                phase = .success(Image(uiImage: uiImage))
+            } else {
+                phase = .failure(URLError(.cannotDecodeContentData))
+            }
+        } catch {
+            phase = .failure(error)
+        }
+    }
+}
+
 // MARK: - Diagram Image Card
 struct DiagramImageCard: View {
     let urlString: String
 
     var body: some View {
-        AsyncImage(url: URL(string: urlString)) { phase in
+        CustomAsyncImage(url: URL(string: urlString)) { phase in
             switch phase {
             case .empty:
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -444,8 +492,6 @@ struct DiagramImageCard: View {
                         Image(systemName: "photo.badge.exclamationmark")
                             .foregroundColor(.secondary)
                     )
-            @unknown default:
-                EmptyView()
             }
         }
         .frame(width: 180, height: 130)

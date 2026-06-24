@@ -104,6 +104,7 @@ struct LoginView: View {
     
     // MARK: - Subviews
     
+    @available(iOS 17.0, *)
     private var ambientBackground: some View {
         Color(colorScheme == .dark ? Color(hex: "#0A0F1D") : Color(hex: "#F8FAFC"))
     }

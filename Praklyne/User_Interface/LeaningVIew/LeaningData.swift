@@ -97,9 +97,9 @@ Electricity is the flow of electric charge through a conductor. It is the founda
             "Electric eels can produce up to 600 volts — enough to stun a horse!"
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/OhmsLaw.svg/400px-OhmsLaw.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Series_circuit.svg/400px-Series_circuit.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Parallel_circuit.svg/400px-Parallel_circuit.svg.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/OhmsLaw.svg/500px-OhmsLaw.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Series_circuit.svg/500px-Series_circuit.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Parallel_circuit.svg/500px-Parallel_circuit.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "Electricity – Khan Academy", url: "https://www.khanacademy.org/science/physics/electric-charge-electric-force-and-voltage", source: "Khan Academy"),
@@ -150,8 +150,8 @@ Gravitation is the force of attraction between all objects with mass. It governs
             "An apple reportedly inspired Newton's theory of universal gravitation in 1666."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/NewtonsLawOfUniversalGravitation.svg/400px-NewtonsLawOfUniversalGravitation.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Gravity_field_lines.jpg/400px-Gravity_field_lines.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/NewtonsLawOfUniversalGravitation.svg/500px-NewtonsLawOfUniversalGravitation.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Gravity_field_lines.svg/500px-Gravity_field_lines.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "Gravitation – Khan Academy", url: "https://www.khanacademy.org/science/physics/gravity", source: "Khan Academy"),
@@ -201,8 +201,8 @@ Oscillation refers to repetitive motion around an equilibrium point. Examples in
             "Your heart beats in a rhythm — it's a biological oscillator!"
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Simple_harmonic_motion_animation.gif/400px-Simple_harmonic_motion_animation.gif",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Simple_pendulum_height.svg/300px-Simple_pendulum_height.svg.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Simple_harmonic_motion_animation.gif/500px-Simple_harmonic_motion_animation.gif",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Simple_pendulum_height.svg/500px-Simple_pendulum_height.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "Oscillations – Khan Academy", url: "https://www.khanacademy.org/science/physics/mechanical-waves-and-sound", source: "Khan Academy"),
@@ -251,8 +251,8 @@ Magnetism arises from moving electric charges and magnetic materials. This topic
             "A magnet loses its magnetism permanently if heated above its Curie temperature."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Magnet0873.png/400px-Magnet0873.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Electromagnetism.svg/400px-Electromagnetism.svg.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Magnet0873.png/500px-Magnet0873.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electromagnetism.svg/500px-Electromagnetism.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "Magnetic Forces – Khan Academy", url: "https://www.khanacademy.org/science/physics/magnetic-forces-and-magnetic-fields", source: "Khan Academy"),
@@ -301,8 +301,8 @@ Thermodynamics studies heat, work, energy transfer, and temperature. Topics incl
             "Your body is a heat engine — you generate enough waste heat to boil 1 litre of water per hour!"
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Carnot_cycle_p-V_diagram.svg/400px-Carnot_cycle_p-V_diagram.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Refrigerator_Thermodynamic_cycle.svg/400px-Refrigerator_Thermodynamic_cycle.svg.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Carnot_cycle_p-V_diagram.svg/500px-Carnot_cycle_p-V_diagram.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Refrigerator-cycle.svg/500px-Refrigerator-cycle.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "Thermodynamics – Khan Academy", url: "https://www.khanacademy.org/science/chemistry/thermodynamics-chemistry", source: "Khan Academy"),
@@ -354,9 +354,9 @@ Air pressure is the force exerted by the weight of the atmosphere on any surface
             "Suction cups work by removing air — the surrounding atmospheric pressure pushes the cup against the surface."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Atmosphere_layers.svg/400px-Atmosphere_layers.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Barometer_mercury_column_en.svg/200px-Barometer_mercury_column_en.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Boyle%27s_Law_animated.gif/400px-Boyle%27s_Law_animated.gif"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Atmosphere_layers.svg/500px-Atmosphere_layers.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/MercuryBarometer.svg/500px-MercuryBarometer.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Boyles_Law_animated.gif/500px-Boyles_Law_animated.gif"
         ],
         resources: [
             LearningResource(id: 1, title: "Atmospheric Pressure – Khan Academy", url: "https://www.khanacademy.org/science/physics/fluids/pressure-and-pascals-principle/a/what-is-pressure", source: "Khan Academy"),
@@ -410,7 +410,7 @@ Algebra deals with symbols and rules for manipulating them. Topics include varia
             "The quadratic formula (–b ± √(b²–4ac) / 2a) was known to Babylonian mathematicians 4,000 years ago!"
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Quadratic_formula.svg/400px-Quadratic_formula.svg.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Quadratic_formula.svg/500px-Quadratic_formula.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "Algebra – Khan Academy", url: "https://www.khanacademy.org/math/algebra", source: "Khan Academy"),
@@ -457,8 +457,8 @@ Geometry studies shapes, sizes, positions, and spatial relationships. Topics inc
             "The Great Pyramid of Giza's base has a perimeter of 922 m and is almost a perfect square."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Pythagorean.svg/400px-Pythagorean.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Circle_slices.svg/400px-Circle_slices.svg.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Pythagorean.svg/500px-Pythagorean.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Circle_slices_%28mul%29.svg/500px-Circle_slices_%28mul%29.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "Geometry – Khan Academy", url: "https://www.khanacademy.org/math/geometry", source: "Khan Academy"),
@@ -504,7 +504,7 @@ Calculus studies change and motion through derivatives and integrals. Topics inc
             "Calculus was invented to solve the problem of calculating the area under curves."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tangent-calculus.svg/400px-Tangent-calculus.svg.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Tangent-calculus.svg/500px-Tangent-calculus.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "Calculus – Khan Academy", url: "https://www.khanacademy.org/math/calculus-1", source: "Khan Academy"),
@@ -550,7 +550,7 @@ Statistics is the study of data collection, analysis, interpretation, and presen
             "The birthday paradox: in a group of just 23 people, there's a >50% chance two share a birthday."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Standard_deviation_diagram.svg/400px-Standard_deviation_diagram.svg.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Standard_deviation_diagram.svg/500px-Standard_deviation_diagram.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "Statistics & Probability – Khan Academy", url: "https://www.khanacademy.org/math/statistics-probability", source: "Khan Academy"),
@@ -598,7 +598,7 @@ Swift is a modern programming language for Apple platforms. This topic introduce
             "Swift's type system prevents entire categories of bugs common in C/Objective-C."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/400px-Swift_logo.svg.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/500px-Swift_logo.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "Swift Docs – Apple", url: "https://developer.apple.com/swift/", source: "Apple"),
@@ -644,8 +644,8 @@ Data structures organize data for efficient access and modification. Topics incl
             "The binary search algorithm only works because data is sorted — it cuts search time from O(n) to O(log n)."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/400px-Binary_tree.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Deque.svg/400px-Deque.svg.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/500px-Binary_tree.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Deque.svg/500px-Deque.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "Data Structures – GeeksForGeeks", url: "https://www.geeksforgeeks.org/data-structures/", source: "GeeksForGeeks"),
@@ -691,7 +691,7 @@ OOP is a programming paradigm using objects and classes. Topics include inherita
             "Swift uses both OOP and Protocol-Oriented Programming — Apple calls Swift 'protocol-first'."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/CPT-OOP-objects_and_classes_-_attmeth.svg/400px-CPT-OOP-objects_and_classes_-_attmeth.svg.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/CPT-OOP-objects_and_classes_-_attmeth.svg/500px-CPT-OOP-objects_and_classes_-_attmeth.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "OOP – GeeksForGeeks", url: "https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/", source: "GeeksForGeeks"),
@@ -740,7 +740,7 @@ World War II was a global conflict from 1939 to 1945 involving major world power
             "The first electronic computer ENIAC was developed partly to calculate artillery trajectories during WWII."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Allied_World_War_II.png/400px-Allied_World_War_II.png"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Map_of_participants_in_World_War_II.svg/500px-Map_of_participants_in_World_War_II.svg.png"
         ],
         resources: [
             LearningResource(id: 1, title: "WWII – Khan Academy", url: "https://www.khanacademy.org/humanities/world-history/euro-hist/wwii-casualties/a/world-war-ii-an-overview-article", source: "Khan Academy"),
@@ -788,7 +788,7 @@ Study of early civilizations such as Egypt, Greece, and Rome. Topics include cul
             "Ancient Greeks believed the Earth was round — Eratosthenes calculated its circumference in 240 BCE with remarkable accuracy."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/400px-Kheops-Pyramid.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/500px-Kheops-Pyramid.jpg"
         ],
         resources: [
             LearningResource(id: 1, title: "Ancient History – Khan Academy", url: "https://www.khanacademy.org/humanities/world-history/ancient-medieval-history", source: "Khan Academy"),
@@ -834,7 +834,7 @@ The Industrial Revolution brought technological and social changes in the 18th a
             "Life expectancy in early industrial cities was often below 30 due to disease and poor conditions."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Gipkens_Watt_steam_engine.jpg/400px-Gipkens_Watt_steam_engine.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/WattsSteamEngine.jpeg/500px-WattsSteamEngine.jpeg"
         ],
         resources: [
             LearningResource(id: 1, title: "Industrial Revolution – Khan Academy", url: "https://www.khanacademy.org/humanities/world-history/1600s-1800s/the-industrial-revolution/a/intro-to-the-industrial-revolution", source: "Khan Academy"),
@@ -882,7 +882,7 @@ Rivers are natural watercourses important for ecology, transport, agriculture, a
             "Antarctica is the driest continent on Earth, yet it holds 60% of the world's fresh water as ice."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Nile_River_and_delta_from_orbit.jpg/400px-Nile_River_and_delta_from_orbit.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Nile_River_and_delta_from_orbit.jpg/500px-Nile_River_and_delta_from_orbit.jpg"
         ],
         resources: [
             LearningResource(id: 1, title: "Rivers – National Geographic", url: "https://education.nationalgeographic.org/resource/river/", source: "National Geographic"),
@@ -928,7 +928,7 @@ Mountains and plateaus shape Earth's surface and influence climate, biodiversity
             "The Rocky Mountains were formed by the subduction of the Pacific tectonic plate under North America."
         ],
         diagramImageURLs: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/400px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/500px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg"
         ],
         resources: [
             LearningResource(id: 1, title: "Mountains – National Geographic", url: "https://education.nationalgeographic.org/resource/mountain/", source: "National Geographic"),

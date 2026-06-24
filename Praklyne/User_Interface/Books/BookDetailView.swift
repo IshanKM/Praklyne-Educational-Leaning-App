@@ -17,8 +17,12 @@ struct BookDetailView: View {
     var body: some View {
         ZStack {
             // ── Background color ──
-            Color(colorScheme == .dark ? Color(hex: "#0F172A") : Color(hex: "#F8FAFC"))
-                .ignoresSafeArea()
+            if #available(iOS 17.0, *) {
+                Color(colorScheme == .dark ? Color(hex: "#0F172A") : Color(hex: "#F8FAFC"))
+                    .ignoresSafeArea()
+            } else {
+                // Fallback on earlier versions
+            }
             
             // ── Dynamic Ambient Blur Backdrop (Cover Image Glow) ──
             GeometryReader { geo in

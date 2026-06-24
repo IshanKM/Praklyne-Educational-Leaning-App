@@ -155,12 +155,6 @@
 		5AA077DF2E528D7E00A920D5 /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
 		5AA077E12E528D9200A920D5 /* ToolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolModel.swift; sourceTree = "<group>"; };
 		5AA077E32E53E14400A920D5 /* VideoShortsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoShortsView.swift; sourceTree = "<group>"; };
-		AA000002AA000002AA000002 /* LikedSavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSavedView.swift; sourceTree = "<group>"; };
-		AA000004AA000004AA000004 /* VideoLibraryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryStore.swift; sourceTree = "<group>"; };
-		AA000006AA000006AA000006 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		AA000009AA000009AA000009 /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
-		AA000011AA000011AA000011 /* GeminiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiService.swift; sourceTree = "<group>"; };
-		AA000013AA000013AA000013 /* AIChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatView.swift; sourceTree = "<group>"; };
 		5ACE31E52E5614D0005232DA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5ACE31EF2E564D11005232DA /* PINEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINEntryView.swift; sourceTree = "<group>"; };
 		5ACE31F12E564DF0005232DA /*    .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "   .swift"; sourceTree = "<group>"; };
@@ -196,6 +190,12 @@
 		86A567572E8638CE00699571 /* CourseProgressIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseProgressIntent.swift; sourceTree = "<group>"; };
 		86A567612E868DD400699571 /* VocabularyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VocabularyModel.xcdatamodel; sourceTree = "<group>"; };
 		86A567632E868E9B00699571 /* VocabularyPersistence.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyPersistence.swift.swift; sourceTree = "<group>"; };
+		AA000002AA000002AA000002 /* LikedSavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSavedView.swift; sourceTree = "<group>"; };
+		AA000004AA000004AA000004 /* VideoLibraryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryStore.swift; sourceTree = "<group>"; };
+		AA000006AA000006AA000006 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		AA000009AA000009AA000009 /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
+		AA000011AA000011AA000011 /* GeminiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiService.swift; sourceTree = "<group>"; };
+		AA000013AA000013AA000013 /* AIChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,22 +516,6 @@
 			path = ComingSoon;
 			sourceTree = "<group>";
 		};
-		AA000007AA000007AA000007 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				AA000006AA000006AA000006 /* SearchView.swift */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		AA000014AA000014AA000014 /* AIChat */ = {
-			isa = PBXGroup;
-			children = (
-				AA000013AA000013AA000013 /* AIChatView.swift */,
-			);
-			path = AIChat;
-			sourceTree = "<group>";
-		};
 		860BEFDC2E890C1200492644 /* PersonalWordsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,6 +541,22 @@
 				86A567572E8638CE00699571 /* CourseProgressIntent.swift */,
 			);
 			path = Siri;
+			sourceTree = "<group>";
+		};
+		AA000007AA000007AA000007 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AA000006AA000006AA000006 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		AA000014AA000014AA000014 /* AIChat */ = {
+			isa = PBXGroup;
+			children = (
+				AA000013AA000013AA000013 /* AIChatView.swift */,
+			);
+			path = AIChat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
