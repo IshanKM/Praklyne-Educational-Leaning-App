@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D00B80F301FBDF900F48318 /* Week2ReflectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00B80C301FBDF900F48318 /* Week2ReflectView.swift */; };
+		2D00B810301FBDF900F48318 /* Week3WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00B80D301FBDF900F48318 /* Week3WriteView.swift */; };
+		2D00B811301FBDF900F48318 /* Week4SpeakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00B80E301FBDF900F48318 /* Week4SpeakView.swift */; };
 		5A0C77542E556A050002D647 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0C77532E556A050002D647 /* VideoService.swift */; };
 		5A615ACE2E57047F0080E934 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A615ACD2E57047F0080E934 /* BooksView.swift */; };
 		5A615AD02E576E530080E934 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A615ACF2E576E530080E934 /* BookDetailView.swift */; };
@@ -112,6 +115,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D00B80C301FBDF900F48318 /* Week2ReflectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week2ReflectView.swift; sourceTree = "<group>"; };
+		2D00B80D301FBDF900F48318 /* Week3WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week3WriteView.swift; sourceTree = "<group>"; };
+		2D00B80E301FBDF900F48318 /* Week4SpeakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week4SpeakView.swift; sourceTree = "<group>"; };
 		5A0C77532E556A050002D647 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
 		5A615ACD2E57047F0080E934 /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
 		5A615ACF2E576E530080E934 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
@@ -336,6 +342,9 @@
 		5A7D6D9A2E7B4F0900703166 /* EnglishCourse */ = {
 			isa = PBXGroup;
 			children = (
+				2D00B80C301FBDF900F48318 /* Week2ReflectView.swift */,
+				2D00B80D301FBDF900F48318 /* Week3WriteView.swift */,
+				2D00B80E301FBDF900F48318 /* Week4SpeakView.swift */,
 				86A567562E8638BF00699571 /* Siri */,
 				5A758ACA2E7CC0140050F97E /* VIewModel */,
 				5A7D6D9B2E7B4F3000703166 /* EnglishCoursePage.swift */,
@@ -754,6 +763,9 @@
 				5AF988CD2E45D6F40087A78F /* PraklyneApp.swift in Sources */,
 				5AA077E02E528D7E00A920D5 /* SubjectModel.swift in Sources */,
 				5AF988D92E45D6F70087A78F /* Praklyne.xcdatamodeld in Sources */,
+				2D00B80F301FBDF900F48318 /* Week2ReflectView.swift in Sources */,
+				2D00B810301FBDF900F48318 /* Week3WriteView.swift in Sources */,
+				2D00B811301FBDF900F48318 /* Week4SpeakView.swift in Sources */,
 				5ACE31E62E5614D0005232DA /* SettingsView.swift in Sources */,
 				5ADDD02C2E5792C5004DD8F4 /* PDFReader.swift in Sources */,
 				5ACE31F02E564D11005232DA /* PINEntryView.swift in Sources */,

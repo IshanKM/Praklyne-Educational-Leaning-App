@@ -78,11 +78,46 @@ class CourseDataStore: ObservableObject {
         }
         return 0.75
     }
+
+    // MARK: - Week 2, 3, 4 Day Completion
+    // These are called by each week's view when the user saves their work.
+
+    func markWeek2DayCompleted() {
+        let dayInWeek = totalDaysCompleted % 7
+        if !weeklyProgress[1][dayInWeek] {
+            weeklyProgress[1][dayInWeek] = true
+            totalDaysCompleted += 1
+            saveData()
+        }
+    }
+
+    func markWeek3DayCompleted() {
+        let dayInWeek = totalDaysCompleted % 7
+        if !weeklyProgress[2][dayInWeek] {
+            weeklyProgress[2][dayInWeek] = true
+            totalDaysCompleted += 1
+            saveData()
+        }
+    }
+
+    func markWeek4DayCompleted() {
+        let dayInWeek = totalDaysCompleted % 7
+        if !weeklyProgress[3][dayInWeek] {
+            weeklyProgress[3][dayInWeek] = true
+            totalDaysCompleted += 1
+            saveData()
+        }
+    }
 }
 
 struct CourseProgressView: View {
     @StateObject private var dataStore = CourseDataStore()
-    @State private var navigateToVideo = false
+
+    // Navigation state for each week
+    @State private var navigateToWeek1 = false
+    @State private var navigateToWeek2 = false
+    @State private var navigateToWeek3 = false
+    @State private var navigateToWeek4 = false
 
     var body: some View {
         ScrollView {
@@ -107,21 +142,77 @@ struct CourseProgressView: View {
                 }
                 .padding(.horizontal)
 
+                // Active week label
+                currentWeekBanner
+                    .padding(.horizontal)
+
                 statsGrid
                 continueLearningButton
                 weeklyJourneySection
 
+                // Hidden NavigationLinks — one per week
                 NavigationLink(
                     destination: CourseVideoView(dataStore: dataStore),
-                    isActive: $navigateToVideo
-                ) {
-                    EmptyView()
-                }
+                    isActive: $navigateToWeek1
+                ) { EmptyView() }
+
+                NavigationLink(
+                    destination: Week2ReflectView(dataStore: dataStore),
+                    isActive: $navigateToWeek2
+                ) { EmptyView() }
+
+                NavigationLink(
+                    destination: Week3WriteView(dataStore: dataStore),
+                    isActive: $navigateToWeek3
+                ) { EmptyView() }
+
+                NavigationLink(
+                    destination: Week4SpeakView(dataStore: dataStore),
+                    isActive: $navigateToWeek4
+                ) { EmptyView() }
             }
             .padding(.vertical)
         }
         .navigationTitle("Course Progress")
         .navigationBarTitleDisplayMode(.inline)
+    }
+
+    // MARK: - Current Week Banner
+    private var currentWeekBanner: some View {
+        let week = getCurrentWeek()
+        let info: (emoji: String, title: String, subtitle: String, color: Color) = {
+            switch week {
+            case 0: return ("🎬", "Week 1 · Watch",   "Watch one documentary video today", .blue)
+            case 1: return ("✍️", "Week 2 · Reflect",  "Write your reflections on the videos", .purple)
+            case 2: return ("📝", "Week 3 · Write",    "Write ideas in your own words",       .orange)
+            default: return ("🎙️", "Week 4 · Speak",  "Record yourself speaking in English", .green)
+            }
+        }()
+
+        return HStack(spacing: 14) {
+            Text(info.emoji).font(.title2)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(info.title)
+                    .font(.subheadline).fontWeight(.bold)
+                    .foregroundColor(info.color)
+                Text(info.subtitle)
+                    .font(.caption).foregroundColor(.secondary)
+            }
+            Spacer()
+            Text("Current")
+                .font(.caption).fontWeight(.semibold)
+                .padding(.horizontal, 10).padding(.vertical, 5)
+                .background(info.color.opacity(0.15))
+                .foregroundColor(info.color)
+                .cornerRadius(8)
+        }
+        .padding(14)
+        .background(
+            RoundedRectangle(cornerRadius: 14)
+                .fill(info.color.opacity(0.06))
+                .overlay(RoundedRectangle(cornerRadius: 14)
+                    .stroke(info.color.opacity(0.25), lineWidth: 1))
+        )
     }
 
     private var progressCircle: some View {
@@ -176,30 +267,47 @@ struct CourseProgressView: View {
     }
     
     private var continueLearningButton: some View {
-        VStack(spacing: 8) {
-            Button(action: { navigateToVideo = true }) {   // changed to push page
+        let week = getCurrentWeek()
+        let canContinue = week == 0 ? dataStore.canWatchToday() : true
+
+        let (buttonIcon, buttonLabel, gradientColors): (String, String, [Color]) = {
+            switch week {
+            case 0: return (
+                "play.circle.fill",
+                canContinue ? "Watch Today's Video" : "Come Back Tomorrow",
+                canContinue ? [.blue, .purple] : [.gray, .gray.opacity(0.8)]
+            )
+            case 1: return ("pencil.circle.fill",   "Write Today's Reflection",   [.purple, .blue])
+            case 2: return ("square.and.pencil",      "Write Today's Ideas",        [.orange, .red])
+            default: return ("mic.circle.fill",      "Record Today's Speaking",    [.green, .teal])
+            }
+        }()
+
+        return VStack(spacing: 8) {
+            Button(action: {
+                switch week {
+                case 0: navigateToWeek1 = true
+                case 1: navigateToWeek2 = true
+                case 2: navigateToWeek3 = true
+                default: navigateToWeek4 = true
+                }
+            }) {
                 HStack {
-                    Image(systemName: "play.circle.fill")
-                        .font(.title2)
-                    Text(dataStore.canWatchToday() ? "Continue Learning" : "Come Back Tomorrow")
-                        .font(.headline)
-                        .fontWeight(.semibold)
+                    Image(systemName: buttonIcon).font(.title2)
+                    Text(buttonLabel).font(.headline).fontWeight(.semibold)
                 }
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(
-                    LinearGradient(
-                        colors: dataStore.canWatchToday() ? [Color.blue, Color.purple] : [Color.gray, Color.gray.opacity(0.8)],
-                        startPoint: .leading,
-                        endPoint: .trailing
-                    )
+                    LinearGradient(colors: gradientColors,
+                                   startPoint: .leading, endPoint: .trailing)
                 )
                 .cornerRadius(12)
             }
-            .disabled(!dataStore.canWatchToday())
-            
-            if !dataStore.canWatchToday() {
+            .disabled(!canContinue)
+
+            if week == 0 && !canContinue {
                 Text("You've already watched a video today! 🎉")
                     .font(.caption)
                     .foregroundColor(.secondary)
