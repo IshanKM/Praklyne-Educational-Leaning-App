@@ -1,6 +1,7 @@
 import Foundation
 import FirebaseCore
 import FirebaseAuth
+import FirebaseFirestore
 import GoogleSignIn
 import AuthenticationServices
 import SwiftUI
@@ -8,8 +9,33 @@ import CryptoKit
 
 class FirebaseManager {
     static let shared = FirebaseManager()
+    private let db = Firestore.firestore()
     
     private init() {}
+    
+    // MARK: - Save User to Firestore (called after every login)
+    // This is what makes the user appear in the Admin Dashboard "Users" section.
+    func saveUserToFirestore(_ authResult: AuthDataResult) {
+        let user = authResult.user
+        let userData: [String: Any] = [
+            "uid":         user.uid,
+            "email":       user.email ?? "",
+            "displayName": user.displayName ?? "",
+            "photoURL":    user.photoURL?.absoluteString ?? "",
+            "createdAt":   FieldValue.serverTimestamp()
+        ]
+        // merge: true — updates existing users without deleting any extra fields
+        db.collection("users")
+            .document(user.uid)
+            .setData(userData, merge: true) { error in
+                if let error = error {
+                    print("❌ Failed to save user to Firestore: \(error.localizedDescription)")
+                } else {
+                    print("✅ User saved to Firestore: \(user.email ?? user.uid)")
+                    CloudSyncManager.shared.restoreUserData {}
+                }
+            }
+    }
     
     // MARK: - Google Sign In
     func signInWithGoogle(completion: @escaping (Result<AuthDataResult, Error>) -> Void) {
@@ -39,6 +65,8 @@ class FirebaseManager {
                     return
                 }
                 if let authResult = authResult {
+                    // ✅ Save user data to Firestore so Admin Dashboard shows them
+                    self.saveUserToFirestore(authResult)
                     completion(.success(authResult))
                 }
             }
@@ -91,6 +119,8 @@ class FirebaseManager {
                 return
             }
             if let authResult = authResult {
+                // ✅ Save user data to Firestore so Admin Dashboard shows them
+                self.saveUserToFirestore(authResult)
                 completion(.success(authResult))
             }
         }

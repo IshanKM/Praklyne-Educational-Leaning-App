@@ -294,3 +294,11 @@ struct Week3WriteView: View {
         dataStore.markWeek3DayCompleted()
     }
 }
+
+struct Week3WriteView_Previews: PreviewProvider {
+    static var previews: some View {
+        Week3WriteView(dataStore: CourseDataStore())
+    }
+}
+
+

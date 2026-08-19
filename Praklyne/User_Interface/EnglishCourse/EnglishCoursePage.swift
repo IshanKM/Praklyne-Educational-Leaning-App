@@ -41,6 +41,15 @@ class CourseDataStore: ObservableObject {
         if let weekData = try? JSONEncoder().encode(weeklyProgress) {
             UserDefaults.standard.set(weekData, forKey: "weeklyProgress")
         }
+        
+        // Sync progress real-time to Firestore
+        CloudSyncManager.shared.syncCourseProgress(
+            totalDaysCompleted: totalDaysCompleted,
+            currentStreak: currentStreak,
+            totalHoursSpent: totalHoursSpent,
+            lastWatchedDate: lastWatchedDate,
+            weeklyProgress: weeklyProgress
+        )
     }
     
     func canWatchToday() -> Bool {

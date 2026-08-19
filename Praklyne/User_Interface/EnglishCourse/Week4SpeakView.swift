@@ -469,3 +469,11 @@ final class AudioRecorderManager: NSObject, ObservableObject, AVAudioRecorderDel
         isPlaying = false
     }
 }
+
+struct Week4SpeakView_Previews: PreviewProvider {
+    static var previews: some View {
+        Week4SpeakView(dataStore: CourseDataStore())
+    }
+}
+
+

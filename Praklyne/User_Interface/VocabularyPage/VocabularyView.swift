@@ -39,7 +39,7 @@ struct VocabularyView: View {
         .sheet(isPresented: $showingAddWord) {
             AddWordView { word in
                 let newItem = VocabularyItem(context: viewContext)
-                newItem.id = UUID()
+                newItem.id = word.id
                 newItem.english = word.english
                 newItem.sinhala = word.sinhala
                 newItem.category = word.category
@@ -48,6 +48,7 @@ struct VocabularyView: View {
                 newItem.isFavorite = false
                 do {
                     try viewContext.save()
+                    CloudSyncManager.shared.syncVocabularyWord(word)
                 } catch {
                     print("Failed to save word: \(error)")
                 }

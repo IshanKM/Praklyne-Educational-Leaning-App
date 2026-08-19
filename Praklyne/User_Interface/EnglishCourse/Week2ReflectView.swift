@@ -300,3 +300,9 @@ struct Week2ReflectView: View {
         text.split(separator: " ").filter { !$0.isEmpty }.count
     }
 }
+
+struct Week2ReflectView_Previews: PreviewProvider {
+    static var previews: some View {
+        Week2ReflectView(dataStore: CourseDataStore())
+    }
+}

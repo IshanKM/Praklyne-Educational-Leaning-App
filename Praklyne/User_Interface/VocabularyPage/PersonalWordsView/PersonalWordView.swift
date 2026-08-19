@@ -50,6 +50,7 @@ struct PersonalWordsView: View {
             let items = try viewContext.fetch(request)
             items.forEach { viewContext.delete($0) }
             try viewContext.save()
+            CloudSyncManager.shared.deleteVocabularyWord(english: word.english, sinhala: word.sinhala)
         } catch {
             print("Failed to delete word: \(error)")
         }
